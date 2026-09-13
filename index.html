@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recrutamento Oficial | Ucrânia & África do Sul</title>
+    <meta name="description" content="Recrutamento oficial para Ucrânia e África do Sul. Voo, visto, hospedagem, fardamento e salário de $1.000 a $8.000 USD inclusos.">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- BARRA SUPERIOR / HEADER -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="brand">
+                <div class="brand-logo" title="Recrutamento Oficial - Ucrânia & África do Sul">
+                    <img src="logo.svg" alt="Logo Oficial Recrutamento" width="46" height="46">
+                </div>
+                <div class="brand-text">
+                    <span class="brand-title" data-i18n="brand_title">RECRUTAMENTO</span>
+                    <span class="brand-sub" data-i18n="brand_sub">Ucrânia • África do Sul</span>
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <!-- SELETOR DE IDIOMAS (i18n) -->
+                <div class="lang-selector" id="langSelector" role="group" aria-label="Seletor de idioma / Language Selector">
+                    <button type="button" class="lang-btn active" data-lang="pt" title="Português">
+                        <span class="lang-flag">🇧🇷</span>
+                        <span class="lang-code">PT</span>
+                    </button>
+                    <button type="button" class="lang-btn" data-lang="en" title="English">
+                        <span class="lang-flag">🇺🇸</span>
+                        <span class="lang-code">EN</span>
+                    </button>
+                    <button type="button" class="lang-btn" data-lang="es" title="Español">
+                        <span class="lang-flag">🇪🇸</span>
+                        <span class="lang-code">ES</span>
+                    </button>
+                    <button type="button" class="lang-btn" data-lang="uk" title="Українська">
+                        <span class="lang-flag">🇺🇦</span>
+                        <span class="lang-code">UK</span>
+                    </button>
+                </div>
+
+                <div class="header-contacts">
+                    <a href="https://wa.me/380969501051" target="_blank" rel="noopener noreferrer" class="contact-pill wa">
+                        <span class="icon">💬</span>
+                        <span class="contact-label">WhatsApp: <strong>+380 96 950 1051</strong></span>
+                    </a>
+                    <a href="https://t.me/+48796977298" target="_blank" rel="noopener noreferrer" class="contact-pill tg" id="headerTelegramBtn">
+                        <span class="icon">✈️</span>
+                        <span class="contact-label">Telegram: <strong>+48 796 977 298</strong></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-tag">
+                <span class="pulse-dot"></span> <span data-i18n="hero_tag">RECRUTAMENTO INTERNACIONAL ABERTO</span>
+            </div>
+            <h1 class="hero-title">
+                <span data-i18n="hero_title_p1">Oportunidade de Recrutamento</span><br>
+                <span class="highlight" data-i18n="hero_title_highlight">Ucrânia & África do Sul</span>
+            </h1>
+            
+            <div class="official-statement">
+                <div class="statement-icon">🛡️</div>
+                <blockquote class="statement-text" data-i18n="hero_statement">
+                    "Recrutamento para pessoas de 18 a 50 anos de idade para Ucrânia e África do Sul. Pagamos todas as despesas de voo, hospedagem e visto, com salário de 1.000 a 8.000 dólares, com alojamento, fardamento e equipamentos militares tudo incluso."
+                </blockquote>
+            </div>
+
+            <div class="hero-actions">
+                <a href="#formulario" class="btn btn-primary">
+                    <span class="btn-icon">📋</span> <span data-i18n="hero_btn_form">Preencher Ficha de Recrutamento</span>
+                </a>
+                <a href="https://wa.me/380969501051?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20recrutamento." target="_blank" class="btn btn-outline" id="heroWaBtn">
+                    <span class="btn-icon">💬</span> <span data-i18n="hero_btn_wa">Contato Imediato via WhatsApp</span>
+                </a>
+            </div>
+
+            <!-- CARDS DE BENEFÍCIOS -->
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="b-icon">✈️</div>
+                    <h3 data-i18n="benefit_1_title">Despesas 100% Pagas</h3>
+                    <p data-i18n="benefit_1_desc">Passagens aéreas de ida, visto oficial e transfer totalmente cobertos pela organização.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="b-icon">💵</div>
+                    <h3 data-i18n="benefit_2_title">$1.000 a $8.000 USD</h3>
+                    <p data-i18n="benefit_2_desc">Remuneração mensal em dólares, definida de acordo com sua função, qualificação e missão.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="b-icon">🪖</div>
+                    <h3 data-i18n="benefit_3_title">Equipamento & Fardamento</h3>
+                    <p data-i18n="benefit_3_desc">Alojamento, alimentação completa, fardamento tático e equipamentos militares inclusos.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="b-icon">🌐</div>
+                    <h3 data-i18n="benefit_4_title">Suporte Completo</h3>
+                    <p data-i18n="benefit_4_desc">Atendimento direto com o recrutador oficial para orientações de viagem e documentação.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE VÍDEOS DE TREINAMENTO -->
+    <section class="section videos-section" id="treinamentos">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge" data-i18n="videos_badge">DEMONSTRAÇÃO OPERACIONAL</span>
+                <h2 class="section-title" data-i18n="videos_title">Vídeos de Treinamento em Campo</h2>
+                <p class="section-desc" data-i18n="videos_desc">Confira registros dos treinamentos, rotina tática e preparação dos voluntários.</p>
+            </div>
+
+            <div class="video-grid">
+                <!-- VÍDEO 1 -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <video controls preload="metadata" playsinline poster="">
+                            <source src="VID-20260912-WA0020.mp4" type="video/mp4">
+                            <span data-i18n="video_unsupported">Seu navegador não suporta reprodução de vídeo.</span>
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <span class="v-tag" data-i18n="module_1_tag">Módulo 01</span>
+                        <h4 data-i18n="module_1_title">Instrução Tática & Movimentação</h4>
+                    </div>
+                </div>
+
+                <!-- VÍDEO 2 -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <video controls preload="metadata" playsinline poster="">
+                            <source src="VID-20260912-WA0021.mp4" type="video/mp4">
+                            <span data-i18n="video_unsupported">Seu navegador não suporta reprodução de vídeo.</span>
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <span class="v-tag" data-i18n="module_2_tag">Módulo 02</span>
+                        <h4 data-i18n="module_2_title">Condicionamento Operacional & Prática</h4>
+                    </div>
+                </div>
+
+                <!-- VÍDEO 3 -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <video controls preload="metadata" playsinline poster="">
+                            <source src="VID-20260912-WA0022.mp4" type="video/mp4">
+                            <span data-i18n="video_unsupported">Seu navegador não suporta reprodução de vídeo.</span>
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <span class="v-tag" data-i18n="module_3_tag">Módulo 03</span>
+                        <h4 data-i18n="module_3_title">Treinamento em Terreno & Equipe</h4>
+                    </div>
+                </div>
+
+                <!-- VÍDEO 4 -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <video controls preload="metadata" playsinline poster="">
+                            <source src="VID-20260912-WA0023.mp4" type="video/mp4">
+                            <span data-i18n="video_unsupported">Seu navegador não suporta reprodução de vídeo.</span>
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <span class="v-tag" data-i18n="module_4_tag">Módulo 04</span>
+                        <h4 data-i18n="module_4_title">Simulação de Operações e Prontidão</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DO FORMULÁRIO -->
+    <section class="section form-section" id="formulario">
+        <div class="container form-container">
+            <div class="section-header">
+                <span class="section-badge" data-i18n="form_badge">TRIAGEM DE CANDIDATOS</span>
+                <h2 class="section-title" data-i18n="form_title">Formulário de Recrutamento</h2>
+                <p class="section-desc" data-i18n="form_desc">Preencha com atenção todos os campos. Ao concluir, você será direcionado para o WhatsApp do Recrutador.</p>
+            </div>
+
+            <form id="recrutamentoForm" class="tactical-form" novalidate>
+                <div class="form-card">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="nome"><span data-i18n="label_first_name">Nome próprio</span> <span class="req">*</span></label>
+                            <input type="text" id="nome" name="nome" placeholder="Ex: Carlos Eduardo" data-i18n-ph="ph_first_name" required>
+                            <span class="error-msg" id="err-nome" data-i18n="err_first_name">Por favor, insira seu nome próprio.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sobrenome"><span data-i18n="label_last_name">Sobrenome</span> <span class="req">*</span></label>
+                            <input type="text" id="sobrenome" name="sobrenome" placeholder="Ex: Silva Ferreira" data-i18n-ph="ph_last_name" required>
+                            <span class="error-msg" id="err-sobrenome" data-i18n="err_last_name">Por favor, insira seu sobrenome.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nascimento"><span data-i18n="label_dob">Data de nascimento</span> <span class="req">*</span></label>
+                            <input type="date" id="nascimento" name="nascimento" required>
+                            <span class="hint" id="hint-nascimento" data-i18n="hint_dob">Idade permitida: de 18 a 50 anos</span>
+                            <span class="error-msg" id="err-nascimento" data-i18n="err_dob_req">Informe uma data válida (idade entre 18 e 50 anos).</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cidadania"><span data-i18n="label_citizenship">Cidadania</span> <span class="req">*</span></label>
+                            <select id="cidadania" name="cidadania" required>
+                                <option value="" data-i18n="ph_citizenship">Selecione sua cidadania</option>
+                                <option value="Brasileira">Brasileira</option>
+                                <option value="Portuguesa">Portuguesa</option>
+                                <option value="Sul-Africana">Sul-Africana</option>
+                                <option value="Ucraniana">Ucraniana</option>
+                                <option value="Angolana">Angolana</option>
+                                <option value="Moçambicana">Moçambicana</option>
+                                <option value="Outra">Outra</option>
+                            </select>
+                            <span class="error-msg" id="err-cidadania" data-i18n="err_citizenship">Selecione sua cidadania.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="linguaMaterna"><span data-i18n="label_native_lang">Língua materna</span> <span class="req">*</span></label>
+                            <select id="linguaMaterna" name="linguaMaterna" required>
+                                <option value="" data-i18n="ph_native_lang">Selecione sua língua materna</option>
+                                <option value="Português">Português</option>
+                                <option value="Inglês">Inglês</option>
+                                <option value="Espanhol">Espanhol</option>
+                                <option value="Ucraniano">Ucraniano</option>
+                                <option value="Russo">Russo</option>
+                                <option value="Outra">Outra</option>
+                            </select>
+                            <span class="error-msg" id="err-linguaMaterna" data-i18n="err_native_lang">Selecione sua língua materna.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="outraLingua"><span data-i18n="label_other_lang">Outra língua</span> <span class="optional" data-i18n="optional_tag">(Opcional)</span></label>
+                            <input type="text" id="outraLingua" name="outraLingua" placeholder="Ex: Inglês intermediário, Espanhol conversação" data-i18n-ph="ph_other_lang">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email"><span data-i18n="label_email">Endereço de e-mail</span> <span class="req">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" data-i18n-ph="ph_email" required>
+                            <span class="error-msg" id="err-email" data-i18n="err_email">Informe um endereço de e-mail válido.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefone"><span data-i18n="label_phone">Número de mensageiro ativo (Telegram ou WhatsApp)</span> <span class="req">*</span></label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="5521988567849" required>
+                            <span class="hint" id="hint-telefone" data-i18n="hint_phone">Instrução / Exemplo indicado: <code>5521988567849</code> (código do país + DDD + número)</span>
+                            <span class="error-msg" id="err-telefone" data-i18n="err_phone">Insira um número válido no padrão indicado (ex: 5521988567849).</span>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="chegadaUcrania"><span data-i18n="label_arrival">Quando é que se pode chegar à Ucrânia</span> <span class="optional" data-i18n="optional_tag">(Opcional)</span></label>
+                            <input type="text" id="chegadaUcrania" name="chegadaUcrania" placeholder="Ex: Imediatamente / Em 15 dias / No próximo mês" data-i18n-ph="ph_arrival">
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="experienciaMilitar"><span data-i18n="label_military">Experiência militar</span> <span class="optional" data-i18n="optional_tag">(Opcional)</span></label>
+                            <textarea id="experienciaMilitar" name="experienciaMilitar" rows="3" placeholder="Descreva brevemente caso tenha servido às Forças Armadas (Exército, Marinha, Aeronáutica), Forças Policiais, Segurança Privada ou cursos táticos." data-i18n-ph="ph_military"></textarea>
+                        </div>
+
+                        <!-- AVISO DE DOCUMENTAÇÃO (PASSAPORTE) -->
+                        <div class="passport-notice-box full-width">
+                            <div class="notice-title">
+                                <span>📌</span> <span data-i18n="passport_notice_title">Documentação (Passaporte Internacional)</span>
+                            </div>
+                            <p data-i18n="passport_notice_body">
+                                A imagem ou cópia do passaporte <strong>não deve ser enviada pelo site</strong>. Envie a foto ou PDF do documento diretamente na conversa do <strong>WhatsApp (+380 96 950 1051)</strong> ou <strong>Telegram (+48 796 977 298)</strong> assim que você for redirecionado após o envio desta ficha.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- BOTÃO DE ENVIO -->
+                    <div class="form-submit-wrapper">
+                        <button type="submit" id="btnSubmit" class="btn btn-submit">
+                            <span class="btn-icon">📲</span> <span data-i18n="btn_submit">Enviar Ficha de Recrutamento ao WhatsApp Oficial</span>
+                        </button>
+                        <p class="submit-disclaimer" data-i18n="submit_disclaimer">
+                            Ao clicar em enviar, os dados serão validados e organizados no WhatsApp do Recrutador (<strong>+380 96 950 1051</strong>). Lembre-se de enviar a foto do passaporte diretamente na conversa aberta.
+                        </p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- MODAL DE CONFIRMAÇÃO / REDIRECIONAMENTO -->
+    <div id="confirmModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-header">
+                <span class="modal-icon">✅</span>
+                <h3 data-i18n="modal_title">Ficha Pronta para Envio!</h3>
+            </div>
+            <div class="modal-body">
+                <p data-i18n="modal_desc">Sua ficha de recrutamento foi conferida e estruturada com sucesso.</p>
+                <div class="modal-alert" data-i18n="modal_alert">
+                    <strong>📌 AVISO OBRIGATÓRIO (PASSAPORTE):</strong><br>
+                    Você será redirecionado para o WhatsApp do Recrutador (<code>+380 96 950 1051</code>). Como imagens não são transferidas pelo redirecionador, <strong>envie a foto ou PDF do seu passaporte internacional diretamente no chat do WhatsApp ou Telegram</strong> assim que a conversa for aberta!
+                </div>
+                <div class="modal-files-summary" id="modalFilesSummary"></div>
+            </div>
+            <div class="modal-actions">
+                <button type="button" id="btnRedirectWa" class="btn btn-primary btn-block" data-i18n="modal_btn_wa">
+                    Abrir WhatsApp do Recrutador Agora
+                </button>
+                <button type="button" id="btnRedirectTg" class="btn btn-telegram btn-block" data-i18n="modal_btn_tg">
+                    Abrir Telegram do Recrutador (+48 796 977 298)
+                </button>
+                <button type="button" id="btnCopyTgPhone" class="btn btn-outline-tg btn-block" data-i18n="modal_btn_copy_tg">
+                    📋 Copiar Número do Telegram (+48 796 977 298)
+                </button>
+                <div class="modal-tg-hint" data-i18n="modal_tg_hint">
+                    💡 <em>Aviso:</em> Se o aplicativo do Telegram indicar que o número não foi encontrado, adicione <strong>+48 796 977 298</strong> aos contatos do seu telefone ou chame pelo WhatsApp oficial.
+                </div>
+                <button type="button" id="btnCopyText" class="btn btn-outline btn-block" data-i18n="modal_btn_copy">
+                    Copiar Dados da Ficha
+                </button>
+                <button type="button" id="btnCloseModal" class="btn btn-secondary btn-block" data-i18n="modal_btn_close">
+                    Voltar e Editar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <div class="brand-title" data-i18n="footer_brand_title">RECRUTADOR OFICIAL</div>
+                <p data-i18n="footer_brand_desc">Ucrânia & África do Sul • Voo, Visto, Hospedagem e Remuneração Integral.</p>
+            </div>
+            <div class="footer-channels">
+                <h4 data-i18n="footer_channels_title">Canais Oficiais de Atendimento:</h4>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/380969501051" target="_blank" rel="noopener noreferrer">+380 96 950 1051</a></p>
+                <p><strong>Telegram:</strong> <a href="https://t.me/+48796977298" target="_blank" rel="noopener noreferrer" id="footerTelegramLink">+48 796 977 298</a></p>
+            </div>
+            <div class="footer-copy">
+                <p data-i18n="footer_copy">&copy; 2026 RECRUTADOR. Inspirado nos protocolos internacionais de voluntariado e triagem militar.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

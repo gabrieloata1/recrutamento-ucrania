@@ -1,0 +1,600 @@
+/**
+ * Recrutamento Oficial - Ucrânia & África do Sul
+ * Dicionário Completo de Idiomas (i18n)
+ * Suporte: Português (PT), English (EN), Español (ES), Українська (UK)
+ */
+
+const TRANSLATIONS = {
+    pt: {
+        meta_title: "Recrutamento Oficial | Ucrânia & África do Sul",
+        meta_desc: "Recrutamento oficial para Ucrânia e África do Sul. Voo, visto, hospedagem, fardamento e salário de $1.000 a $8.000 USD inclusos.",
+        brand_title: "RECRUTAMENTO",
+        brand_sub: "Ucrânia • África do Sul",
+        hero_tag: "RECRUTAMENTO INTERNACIONAL ABERTO",
+        hero_title_p1: "Oportunidade de Recrutamento",
+        hero_title_highlight: "Ucrânia & África do Sul",
+        hero_statement: "\"Recrutamento para pessoas de 18 a 50 anos de idade para Ucrânia e África do Sul. Pagamos todas as despesas de voo, hospedagem e visto, com salário de 1.000 a 8.000 dólares, com alojamento, fardamento e equipamentos militares tudo incluso.\"",
+        hero_btn_form: "Preencher Ficha de Recrutamento",
+        hero_btn_wa: "Contato Imediato via WhatsApp",
+        hero_wa_msg: "Olá, gostaria de informações sobre o recrutamento.",
+
+        benefit_1_title: "Despesas 100% Pagas",
+        benefit_1_desc: "Passagens aéreas de ida, visto oficial e transfer totalmente cobertos pela organização.",
+        benefit_2_title: "$1.000 a $8.000 USD",
+        benefit_2_desc: "Remuneração mensal em dólares, definida de acordo com sua função, qualificação e missão.",
+        benefit_3_title: "Equipamento & Fardamento",
+        benefit_3_desc: "Alojamento, alimentação completa, fardamento tático e equipamentos militares inclusos.",
+        benefit_4_title: "Suporte Completo",
+        benefit_4_desc: "Atendimento direto com o recrutador oficial para orientações de viagem e documentação.",
+
+        videos_badge: "DEMONSTRAÇÃO OPERACIONAL",
+        videos_title: "Vídeos de Treinamento em Campo",
+        videos_desc: "Confira registros dos treinamentos, rotina tática e preparação dos voluntários.",
+        module_1_tag: "Módulo 01",
+        module_1_title: "Instrução Tática & Movimentação",
+        module_2_tag: "Módulo 02",
+        module_2_title: "Condicionamento Operacional & Prática",
+        module_3_tag: "Módulo 03",
+        module_3_title: "Treinamento em Terreno & Equipe",
+        module_4_tag: "Módulo 04",
+        module_4_title: "Simulação de Operações e Prontidão",
+        video_unsupported: "Seu navegador não suporta reprodução de vídeo.",
+
+        form_badge: "TRIAGEM DE CANDIDATOS",
+        form_title: "Formulário de Recrutamento",
+        form_desc: "Preencha com atenção todos os campos. Ao concluir, você será direcionado para o WhatsApp do Recrutador.",
+
+        label_first_name: "Nome próprio",
+        ph_first_name: "Ex: Carlos Eduardo",
+        err_first_name: "Por favor, insira seu nome próprio.",
+
+        label_last_name: "Sobrenome",
+        ph_last_name: "Ex: Silva Ferreira",
+        err_last_name: "Por favor, insira seu sobrenome.",
+
+        label_dob: "Data de nascimento",
+        hint_dob: "Idade permitida: de 18 a 50 anos",
+        err_dob_req: "Informe sua data de nascimento.",
+        err_dob_range: "A idade informada ({age} anos) está fora da faixa exigida de 18 a 50 anos.",
+
+        label_citizenship: "Cidadania",
+        ph_citizenship: "Selecione sua cidadania",
+        err_citizenship: "Selecione sua cidadania.",
+
+        label_native_lang: "Língua materna",
+        ph_native_lang: "Selecione sua língua materna",
+        err_native_lang: "Selecione sua língua materna.",
+
+        label_other_lang: "Outra língua",
+        optional_tag: "(Opcional)",
+        ph_other_lang: "Ex: Inglês intermediário, Espanhol conversação",
+
+        label_email: "Endereço de e-mail",
+        ph_email: "seuemail@exemplo.com",
+        err_email: "Informe um endereço de e-mail válido.",
+
+        label_phone: "Número de mensageiro ativo (Telegram ou WhatsApp)",
+        hint_phone: "Instrução / Exemplo indicado: <code>5521988567849</code> (código do país + DDD + número)",
+        err_phone: "Insira um número válido no padrão indicado (ex: 5521988567849).",
+
+        label_arrival: "Quando é que se pode chegar à Ucrânia",
+        ph_arrival: "Ex: Imediatamente / Em 15 dias / No próximo mês",
+
+        label_military: "Experiência militar",
+        ph_military: "Descreva brevemente caso tenha servido às Forças Armadas (Exército, Marinha, Aeronáutica), Forças Policiais, Segurança Privada ou cursos táticos.",
+
+        passport_notice_title: "Documentação (Passaporte Internacional)",
+        passport_notice_body: "A imagem ou cópia do passaporte <strong>não deve ser enviada pelo site</strong>. Envie a foto ou PDF do documento diretamente na conversa do <strong>WhatsApp (+380 96 950 1051)</strong> ou <strong>Telegram (+48 796 977 298)</strong> assim que você for redirecionado após o envio desta ficha.",
+
+        btn_submit: "Enviar Ficha de Recrutamento ao WhatsApp Oficial",
+        submit_disclaimer: "Ao clicar em enviar, os dados serão validados e organizados no WhatsApp do Recrutador (<strong>+380 96 950 1051</strong>). Lembre-se de enviar a foto do passaporte diretamente na conversa aberta.",
+
+        modal_title: "Ficha Pronta para Envio!",
+        modal_desc: "Sua ficha de recrutamento foi conferida e estruturada com sucesso.",
+        modal_alert: "<strong>📌 AVISO OBRIGATÓRIO (PASSAPORTE):</strong><br>Você será redirecionado para o WhatsApp do Recrutador (<code>+380 96 950 1051</code>). Como imagens não são transferidas pelo redirecionador, <strong>envie a foto ou PDF do seu passaporte internacional diretamente no chat do WhatsApp ou Telegram</strong> assim que a conversa for aberta!",
+        modal_summary_candidate: "Candidato",
+        modal_summary_cit_lang: "Cidadania / Língua",
+        modal_summary_passport: "Passaporte",
+        modal_summary_passport_text: "Enviar foto/cópia diretamente no chat (WhatsApp ou Telegram)",
+        modal_summary_phone: "Mensageiro informado",
+        modal_btn_wa: "Abrir WhatsApp do Recrutador Agora",
+        modal_btn_tg: "Abrir Telegram do Recrutador (+48 796 977 298)",
+        modal_btn_copy_tg: "📋 Copiar Número do Telegram (+48 796 977 298)",
+        modal_btn_copy_tg_success: "✓ Número do Telegram Copiado!",
+        modal_tg_hint: "💡 <em>Aviso:</em> Se o aplicativo do Telegram indicar que o número não foi encontrado, adicione <strong>+48 796 977 298</strong> aos contatos do seu telefone ou chame pelo WhatsApp oficial.",
+        modal_btn_copy: "Copiar Dados da Ficha",
+        modal_btn_copy_success: "✓ Dados Copiados com Sucesso!",
+        modal_btn_close: "Voltar e Editar",
+
+        footer_brand_title: "RECRUTADOR OFICIAL",
+        footer_brand_desc: "Ucrânia & África do Sul • Voo, Visto, Hospedagem e Remuneração Integral.",
+        footer_channels_title: "Canais Oficiais de Atendimento:",
+        footer_copy: "&copy; 2026 RECRUTADOR. Inspirado nos protocolos internacionais de voluntariado e triagem militar.",
+
+        citizenship_options: [
+            { value: "Brasileira", text: "Brasileira" },
+            { value: "Portuguesa", text: "Portuguesa" },
+            { value: "Sul-Africana", text: "Sul-Africana" },
+            { value: "Ucraniana", text: "Ucraniana" },
+            { value: "Angolana", text: "Angolana" },
+            { value: "Moçambicana", text: "Moçambicana" },
+            { value: "Outra", text: "Outra" }
+        ],
+        native_lang_options: [
+            { value: "Português", text: "Português" },
+            { value: "Inglês", text: "Inglês" },
+            { value: "Espanhol", text: "Espanhol" },
+            { value: "Ucraniano", text: "Ucraniano" },
+            { value: "Russo", text: "Russo" },
+            { value: "Outra", text: "Outra" }
+        ],
+
+        // Mensagem WhatsApp
+        wa_header: "🛡️ *NOVA FICHA DE RECRUTAMENTO - RECRUTADOR*",
+        wa_sec_personal: "👤 *INFORMAÇÕES PESSOAIS*",
+        wa_first_name: "Nome próprio",
+        wa_last_name: "Sobrenome",
+        wa_dob: "Data de nascimento",
+        wa_years: "anos",
+        wa_citizenship: "Cidadania",
+        wa_native_lang: "Língua materna",
+        wa_other_lang: "Outra língua",
+        wa_none_informed: "Nenhuma informada",
+        wa_sec_docs: "📄 *DOCUMENTAÇÃO (PASSAPORTE)*",
+        wa_doc_item: "• *Passaporte Internacional:* Envio direto da foto/documento aqui nesta conversa (WhatsApp / Telegram)\n*(O candidato enviará a imagem/PDF do passaporte diretamente no chat)*",
+        wa_sec_contact: "📱 *CONTATO E DISPONIBILIDADE*",
+        wa_email: "E-mail",
+        wa_messenger: "Mensageiro ativo",
+        wa_military: "Experiência militar",
+        wa_military_none: "Nenhuma experiência militar prévia descrita",
+        wa_arrival: "Quando pode chegar à Ucrânia",
+        wa_arrival_default: "A combinar / Imediato",
+        wa_source: "🌐 *Origem:* Formulário Oficial de Recrutamento (Ucrânia & África do Sul)"
+    },
+
+    en: {
+        meta_title: "Official Recruitment | Ukraine & South Africa",
+        meta_desc: "Official recruitment for Ukraine and South Africa. Flight, visa, accommodation, uniform and salary of $1,000 to $8,000 USD included.",
+        brand_title: "RECRUITMENT",
+        brand_sub: "Ukraine • South Africa",
+        hero_tag: "INTERNATIONAL RECRUITMENT OPEN",
+        hero_title_p1: "Recruitment Opportunity",
+        hero_title_highlight: "Ukraine & South Africa",
+        hero_statement: "\"Recruitment for individuals aged 18 to 50 for Ukraine and South Africa. We cover all flight, accommodation and visa expenses, with a salary of $1,000 to $8,000 USD, with housing, uniform and military equipment all included.\"",
+        hero_btn_form: "Fill Out Recruitment Form",
+        hero_btn_wa: "Direct WhatsApp Contact",
+        hero_wa_msg: "Hello, I would like information regarding recruitment.",
+
+        benefit_1_title: "100% Expenses Covered",
+        benefit_1_desc: "One-way airfare, official visa, and airport transfer fully covered by the organization.",
+        benefit_2_title: "$1,000 to $8,000 USD",
+        benefit_2_desc: "Monthly compensation in USD, defined according to your role, qualifications, and mission.",
+        benefit_3_title: "Equipment & Uniform",
+        benefit_3_desc: "Accommodation, full boarding, tactical uniform, and complete military gear included.",
+        benefit_4_title: "Full Support",
+        benefit_4_desc: "Direct communication with the official recruiter for travel and documentation guidance.",
+
+        videos_badge: "OPERATIONAL DEMONSTRATION",
+        videos_title: "Field Training Videos",
+        videos_desc: "Watch recordings of tactical routines, field drills, and volunteer readiness.",
+        module_1_tag: "Module 01",
+        module_1_title: "Tactical Instruction & Movement",
+        module_2_tag: "Module 02",
+        module_2_title: "Operational Conditioning & Practice",
+        module_3_tag: "Module 03",
+        module_3_title: "Terrain & Teamwork Training",
+        module_4_tag: "Module 04",
+        module_4_title: "Mission Simulation & Readiness",
+        video_unsupported: "Your browser does not support video playback.",
+
+        form_badge: "CANDIDATE SCREENING",
+        form_title: "Recruitment Form",
+        form_desc: "Carefully complete all fields. Upon completion, you will be directed to the Recruiter's WhatsApp.",
+
+        label_first_name: "First name",
+        ph_first_name: "e.g. John Edward",
+        err_first_name: "Please enter your first name.",
+
+        label_last_name: "Last name",
+        ph_last_name: "e.g. Miller Smith",
+        err_last_name: "Please enter your last name.",
+
+        label_dob: "Date of birth",
+        hint_dob: "Eligible age: 18 to 50 years old",
+        err_dob_req: "Please provide your date of birth.",
+        err_dob_range: "The entered age ({age} years old) is outside the eligible range of 18 to 50.",
+
+        label_citizenship: "Citizenship",
+        ph_citizenship: "Select your citizenship",
+        err_citizenship: "Please select your citizenship.",
+
+        label_native_lang: "Native language",
+        ph_native_lang: "Select your native language",
+        err_native_lang: "Please select your native language.",
+
+        label_other_lang: "Other language",
+        optional_tag: "(Optional)",
+        ph_other_lang: "e.g. Intermediate English, Conversational Spanish",
+
+        label_email: "Email address",
+        ph_email: "youremail@example.com",
+        err_email: "Please enter a valid email address.",
+
+        label_phone: "Active messenger number (Telegram or WhatsApp)",
+        hint_phone: "Instruction / Example: <code>5521988567849</code> (country code + area code + number)",
+        err_phone: "Enter a valid number in the indicated pattern (e.g. 5521988567849).",
+
+        label_arrival: "When can you arrive in Ukraine",
+        ph_arrival: "e.g. Immediately / Within 15 days / Next month",
+
+        label_military: "Military experience",
+        ph_military: "Briefly describe if you served in the Armed Forces (Army, Navy, Air Force), Police Forces, Private Security, or took tactical courses.",
+
+        passport_notice_title: "Documentation (International Passport)",
+        passport_notice_body: "The passport image or copy <strong>must not be uploaded on this website</strong>. Send the photo or PDF directly in the chat on <strong>WhatsApp (+380 96 950 1051)</strong> or <strong>Telegram (+48 796 977 298)</strong> as soon as you are redirected after submitting this form.",
+
+        btn_submit: "Submit Recruitment Form to Official WhatsApp",
+        submit_disclaimer: "Upon clicking submit, your data will be validated and formatted into the Recruiter's WhatsApp (<strong>+380 96 950 1051</strong>). Remember to send your passport photo directly in the opened chat.",
+
+        modal_title: "Application Ready to Send!",
+        modal_desc: "Your recruitment application has been verified and structured successfully.",
+        modal_alert: "<strong>📌 MANDATORY NOTICE (PASSPORT):</strong><br>You will be redirected to the Recruiter's WhatsApp (<code>+380 96 950 1051</code>). Since images cannot be transferred via URL redirection, <strong>send the photo or PDF of your international passport directly in the WhatsApp or Telegram chat</strong> as soon as the conversation opens!",
+        modal_summary_candidate: "Candidate",
+        modal_summary_cit_lang: "Citizenship / Language",
+        modal_summary_passport: "Passport",
+        modal_summary_passport_text: "Send photo/copy directly in chat (WhatsApp or Telegram)",
+        modal_summary_phone: "Provided Messenger",
+        modal_btn_wa: "Open Recruiter's WhatsApp Now",
+        modal_btn_tg: "Open Recruiter's Telegram (+48 796 977 298)",
+        modal_btn_copy_tg: "📋 Copy Telegram Number (+48 796 977 298)",
+        modal_btn_copy_tg_success: "✓ Telegram Number Copied!",
+        modal_tg_hint: "💡 <em>Notice:</em> If the Telegram app indicates the number wasn't found, add <strong>+48 796 977 298</strong> to your phone contacts or reach out via official WhatsApp.",
+        modal_btn_copy: "Copy Application Data",
+        modal_btn_copy_success: "✓ Data Copied Successfully!",
+        modal_btn_close: "Back & Edit",
+
+        footer_brand_title: "OFFICIAL RECRUITER",
+        footer_brand_desc: "Ukraine & South Africa • Flight, Visa, Housing and Full Compensation.",
+        footer_channels_title: "Official Contact Channels:",
+        footer_copy: "&copy; 2026 RECRUITER. Inspired by international volunteer and military screening protocols.",
+
+        citizenship_options: [
+            { value: "Brasileira", text: "Brazilian" },
+            { value: "Portuguesa", text: "Portuguese" },
+            { value: "Sul-Africana", text: "South African" },
+            { value: "Ucraniana", text: "Ukrainian" },
+            { value: "Angolana", text: "Angolan" },
+            { value: "Moçambicana", text: "Mozambican" },
+            { value: "Outra", text: "Other" }
+        ],
+        native_lang_options: [
+            { value: "Português", text: "Portuguese" },
+            { value: "Inglês", text: "English" },
+            { value: "Espanhol", text: "Spanish" },
+            { value: "Ucraniano", text: "Ukrainian" },
+            { value: "Russo", text: "Russian" },
+            { value: "Outra", text: "Other" }
+        ],
+
+        // WhatsApp Message
+        wa_header: "🛡️ *NEW RECRUITMENT APPLICATION - RECRUITER*",
+        wa_sec_personal: "👤 *PERSONAL INFORMATION*",
+        wa_first_name: "First name",
+        wa_last_name: "Last name",
+        wa_dob: "Date of birth",
+        wa_years: "years old",
+        wa_citizenship: "Citizenship",
+        wa_native_lang: "Native language",
+        wa_other_lang: "Other language",
+        wa_none_informed: "None provided",
+        wa_sec_docs: "📄 *DOCUMENTATION (PASSPORT)*",
+        wa_doc_item: "• *International Passport:* Direct submission of photo/document right here in this chat (WhatsApp / Telegram)\n*(The candidate will attach the passport image/PDF directly in chat)*",
+        wa_sec_contact: "📱 *CONTACT & AVAILABILITY*",
+        wa_email: "Email",
+        wa_messenger: "Active messenger",
+        wa_military: "Military experience",
+        wa_military_none: "No prior military experience described",
+        wa_arrival: "When can arrive in Ukraine",
+        wa_arrival_default: "To be agreed / Immediate",
+        wa_source: "🌐 *Source:* Official Recruitment Form (Ukraine & South Africa)"
+    },
+
+    es: {
+        meta_title: "Reclutamiento Oficial | Ucrania & Sudáfrica",
+        meta_desc: "Reclutamiento oficial para Ucrania y Sudáfrica. Vuelo, visa, hospedaje, uniforme y salario de $1.000 a $8.000 USD incluidos.",
+        brand_title: "RECLUTAMIENTO",
+        brand_sub: "Ucrania • Sudáfrica",
+        hero_tag: "RECLUTAMIENTO INTERNACIONAL ABIERTO",
+        hero_title_p1: "Oportunidad de Reclutamiento",
+        hero_title_highlight: "Ucrania & Sudáfrica",
+        hero_statement: "\"Reclutamiento para personas de 18 a 50 años de edad para Ucrania y Sudáfrica. Pagamos todos los gastos de vuelo, hospedaje y visa, con salario de 1.000 a 8.000 dólares, con alojamiento, uniforme y equipo militar todo incluido.\"",
+        hero_btn_form: "Llenar Formulario de Reclutamiento",
+        hero_btn_wa: "Contacto Inmediato vía WhatsApp",
+        hero_wa_msg: "Hola, me gustaría recibir información sobre el reclutamiento.",
+
+        benefit_1_title: "Gastos 100% Cubiertos",
+        benefit_1_desc: "Pasajes aéreos de ida, visa oficial y traslados totalmente cubiertos por la organización.",
+        benefit_2_title: "$1.000 a $8.000 USD",
+        benefit_2_desc: "Remuneración mensual en dólares, según su función, cualificación y misión asignada.",
+        benefit_3_title: "Equipamiento y Uniforme",
+        benefit_3_desc: "Alojamiento, alimentación completa, uniforme táctico y equipo militar incluidos.",
+        benefit_4_title: "Soporte Completo",
+        benefit_4_desc: "Atención directa con el reclutador oficial para orientación de viaje y documentación.",
+
+        videos_badge: "DEMOSTRACIÓN OPERACIONAL",
+        videos_title: "Videos de Entrenamiento en Campo",
+        videos_desc: "Vea grabaciones de los entrenamientos, rutina táctica y preparación de los voluntarios.",
+        module_1_tag: "Módulo 01",
+        module_1_title: "Instrucción Táctica y Maniobras",
+        module_2_tag: "Módulo 02",
+        module_2_title: "Acondicionamiento Operativo y Práctica",
+        module_3_tag: "Módulo 03",
+        module_3_title: "Entrenamiento en Terreno y Equipo",
+        module_4_tag: "Módulo 04",
+        module_4_title: "Simulación de Operaciones y Preparación",
+        video_unsupported: "Su navegador no soporta reproducción de video.",
+
+        form_badge: "TRIAJE DE CANDIDATOS",
+        form_title: "Formulario de Reclutamiento",
+        form_desc: "Complete atentamente todos los campos. Al finalizar, será redirigido al WhatsApp del Reclutador.",
+
+        label_first_name: "Nombre propio",
+        ph_first_name: "Ej: Carlos Eduardo",
+        err_first_name: "Por favor, ingrese su nombre propio.",
+
+        label_last_name: "Apellido",
+        ph_last_name: "Ej: Silva Ferreira",
+        err_last_name: "Por favor, ingrese su apellido.",
+
+        label_dob: "Fecha de nacimiento",
+        hint_dob: "Edad permitida: de 18 a 50 años",
+        err_dob_req: "Ingrese su fecha de nacimiento.",
+        err_dob_range: "La edad ingresada ({age} años) está fuera del rango exigido de 18 a 50 años.",
+
+        label_citizenship: "Ciudadanía",
+        ph_citizenship: "Seleccione su ciudadanía",
+        err_citizenship: "Seleccione su ciudadanía.",
+
+        label_native_lang: "Lengua materna",
+        ph_native_lang: "Seleccione su lengua materna",
+        err_native_lang: "Seleccione su lengua materna.",
+
+        label_other_lang: "Otro idioma",
+        optional_tag: "(Opcional)",
+        ph_other_lang: "Ej: Inglés intermedio, Español conversacional",
+
+        label_email: "Correo electrónico",
+        ph_email: "tucorreo@ejemplo.com",
+        err_email: "Ingrese un correo electrónico válido.",
+
+        label_phone: "Número de mensajería activo (Telegram o WhatsApp)",
+        hint_phone: "Instrucción / Ejemplo: <code>5521988567849</code> (código de país + código de área + número)",
+        err_phone: "Ingrese un número válido según el formato indicado (ej: 5521988567849).",
+
+        label_arrival: "Cuándo puede llegar a Ucrania",
+        ph_arrival: "Ej: Inmediatamente / En 15 días / El próximo mes",
+
+        label_military: "Experiencia militar",
+        ph_military: "Describa brevemente si ha servido en las Fuerzas Armadas (Ejército, Marina, Fuerza Aérea), Fuerzas Policiales, Seguridad Privada o cursos tácticos.",
+
+        passport_notice_title: "Documentación (Pasaporte Internacional)",
+        passport_notice_body: "La imagen o copia del pasaporte <strong>no debe subirse al sitio web</strong>. Envíe la foto o PDF directamente en la conversación de <strong>WhatsApp (+380 96 950 1051)</strong> o <strong>Telegram (+48 796 977 298)</strong> en cuanto sea redirigido tras enviar este formulario.",
+
+        btn_submit: "Enviar Formulario de Reclutamiento al WhatsApp Oficial",
+        submit_disclaimer: "Al hacer clic en enviar, los datos serán validados y organizados en el WhatsApp del Reclutador (<strong>+380 96 950 1051</strong>). Recuerde enviar la foto del pasaporte directamente en el chat abierto.",
+
+        modal_title: "¡Formulario Listo para Enviar!",
+        modal_desc: "Su formulario de reclutamiento ha sido verificado y estructurado con éxito.",
+        modal_alert: "<strong>📌 AVISO OBLIGATORIO (PASAPORTE):</strong><br>Será redirigido al WhatsApp del Reclutador (<code>+380 96 950 1051</code>). Dado que las imágenes no se transfieren mediante enlaces de redirección, <strong>¡envíe la foto o PDF de su pasaporte internacional directamente en el chat de WhatsApp o Telegram</strong> en cuanto se abra la conversación!",
+        modal_summary_candidate: "Candidato",
+        modal_summary_cit_lang: "Ciudadanía / Idioma",
+        modal_summary_passport: "Pasaporte",
+        modal_summary_passport_text: "Enviar foto/copia directamente en el chat (WhatsApp o Telegram)",
+        modal_summary_phone: "Mensajería indicada",
+        modal_btn_wa: "Abrir WhatsApp del Reclutador Ahora",
+        modal_btn_tg: "Abrir Telegram del Reclutador (+48 796 977 298)",
+        modal_btn_copy_tg: "📋 Copiar Número de Telegram (+48 796 977 298)",
+        modal_btn_copy_tg_success: "✓ ¡Número de Telegram Copiado!",
+        modal_tg_hint: "💡 <em>Aviso:</em> Si la aplicación de Telegram indica que el número no fue encontrado, agregue <strong>+48 796 977 298</strong> a los contactos de su teléfono o comuníquese por el WhatsApp oficial.",
+        modal_btn_copy: "Copiar Datos del Formulario",
+        modal_btn_copy_success: "✓ ¡Datos Copiados con Éxito!",
+        modal_btn_close: "Volver y Editar",
+
+        footer_brand_title: "RECLUTADOR OFICIAL",
+        footer_brand_desc: "Ucrania & Sudáfrica • Vuelo, Visa, Hospedaje y Remuneración Integral.",
+        footer_channels_title: "Canales Oficiales de Atención:",
+        footer_copy: "&copy; 2026 RECLUTADOR. Inspirado en los protocolos internacionales de voluntariado y triaje militar.",
+
+        citizenship_options: [
+            { value: "Brasileira", text: "Brasileña" },
+            { value: "Portuguesa", text: "Portuguesa" },
+            { value: "Sul-Africana", text: "Sudafricana" },
+            { value: "Ucraniana", text: "Ucraniana" },
+            { value: "Angolana", text: "Angoleña" },
+            { value: "Moçambicana", text: "Mozambiqueña" },
+            { value: "Outra", text: "Otra" }
+        ],
+        native_lang_options: [
+            { value: "Português", text: "Portugués" },
+            { value: "Inglês", text: "Inglés" },
+            { value: "Espanhol", text: "Español" },
+            { value: "Ucraniano", text: "Ucraniano" },
+            { value: "Russo", text: "Ruso" },
+            { value: "Outra", text: "Otra" }
+        ],
+
+        // WhatsApp Message
+        wa_header: "🛡️ *NUEVA FICHA DE RECLUTAMIENTO - RECLUTADOR*",
+        wa_sec_personal: "👤 *INFORMACIÓN PERSONAL*",
+        wa_first_name: "Nombre propio",
+        wa_last_name: "Apellido",
+        wa_dob: "Fecha de nacimiento",
+        wa_years: "años",
+        wa_citizenship: "Ciudadanía",
+        wa_native_lang: "Lengua materna",
+        wa_other_lang: "Otro idioma",
+        wa_none_informed: "Ninguna informada",
+        wa_sec_docs: "📄 *DOCUMENTACIÓN (PASAPORTE)*",
+        wa_doc_item: "• *Pasaporte Internacional:* Envío directo de la foto/documento aquí en este chat (WhatsApp / Telegram)\n*(El candidato enviará la imagen/PDF del pasaporte directamente en el chat)*",
+        wa_sec_contact: "📱 *CONTACTO Y DISPONIBILIDAD*",
+        wa_email: "Correo electrónico",
+        wa_messenger: "Mensajería activa",
+        wa_military: "Experiencia militar",
+        wa_military_none: "Ninguna experiencia militar previa descrita",
+        wa_arrival: "Cuándo puede llegar a Ucrania",
+        wa_arrival_default: "A convenir / Inmediato",
+        wa_source: "🌐 *Origen:* Formulario Oficial de Reclutamiento (Ucrania & Sudáfrica)"
+    },
+
+    uk: {
+        meta_title: "Офіційний Рекрутинг | Україна та ПАР",
+        meta_desc: "Офіційний набір для України та ПАР. Переліт, віза, житло, форма та заробітна плата від $1 000 до $8 000 USD включені.",
+        brand_title: "РЕКРУТИНГ",
+        brand_sub: "Україна • ПАР",
+        hero_tag: "ВІДКРИТИЙ МІЖНАРОДНИЙ НАБІР",
+        hero_title_p1: "Можливість Рекрутингу",
+        hero_title_highlight: "Україна та ПАР",
+        hero_statement: "\"Набір кандидатів віком від 18 до 50 років для України та ПАР. Оплачуємо всі витрати на переліт, проживання та візу, зарплата від 1 000 до 8 000 доларів США, проживання, форма та військове спорядження повністю включені.\"",
+        hero_btn_form: "Заповнити Анкету Рекрутингу",
+        hero_btn_wa: "Прямий Зв'язок у WhatsApp",
+        hero_wa_msg: "Вітаю, я хочу отримати інформацію щодо набору.",
+
+        benefit_1_title: "100% Витрат Покрито",
+        benefit_1_desc: "Авіаквитки в один кінець, офіційна віза та трансфер повністю покриваються організацією.",
+        benefit_2_title: "$1 000 – $8 000 USD",
+        benefit_2_desc: "Щомісячна виплата в доларах США відповідно до вашої посади, кваліфікації та завдань.",
+        benefit_3_title: "Спорядження та Форма",
+        benefit_3_desc: "Проживання, повноцінне харчування, тактична форма та військове спорядження включені.",
+        benefit_4_title: "Повний Супровід",
+        benefit_4_desc: "Прямий зв'язок з офіційним рекрутером для консультацій щодо поїздки та оформлення документів.",
+
+        videos_badge: "ОПЕРАТИВНА ДЕМОНСТРАЦІЯ",
+        videos_title: "Відео Польових Тренувань",
+        videos_desc: "Ознайомтеся з тренуваннями, тактичною підготовкою та злагодженням бійців.",
+        module_1_tag: "Модуль 01",
+        module_1_title: "Тактична Підготовка та Рух",
+        module_2_tag: "Модуль 02",
+        module_2_title: "Оперативна Підготовка та Практика",
+        module_3_tag: "Модуль 03",
+        module_3_title: "Тренування на Місцевості та Взаємодія",
+        module_4_tag: "Модуль 04",
+        module_4_title: "Симуляція Операцій та Бойова Готовність",
+        video_unsupported: "Ваш браузер не підтримує відтворення відео.",
+
+        form_badge: "ВІДБІР КАНДИДАТІВ",
+        form_title: "Анкета Рекрутингу",
+        form_desc: "Уважно заповніть усі поля. Після заповнення ви будете перенаправлені у WhatsApp до Рекрутера.",
+
+        label_first_name: "Ім'я",
+        ph_first_name: "Наприклад: Олександр",
+        err_first_name: "Будь ласка, вкажіть ваше ім'я.",
+
+        label_last_name: "Прізвище",
+        ph_last_name: "Наприклад: Шевченко",
+        err_last_name: "Будь ласка, вкажіть ваше прізвище.",
+
+        label_dob: "Дата народження",
+        hint_dob: "Дозволений вік: від 18 до 50 років",
+        err_dob_req: "Вкажіть вашу дату народження.",
+        err_dob_range: "Вказаний вік ({age} р.) не входить у межі від 18 до 50 років.",
+
+        label_citizenship: "Громадянство",
+        ph_citizenship: "Оберіть ваше громадянство",
+        err_citizenship: "Оберіть ваше громадянство.",
+
+        label_native_lang: "Рідна мова",
+        ph_native_lang: "Оберіть вашу рідну мову",
+        err_native_lang: "Оберіть вашу рідну мову.",
+
+        label_other_lang: "Інша мова",
+        optional_tag: "(Необов'язково)",
+        ph_other_lang: "Наприклад: Англійська (розмовна), Польська",
+
+        label_email: "Електронна пошта",
+        ph_email: "youremail@example.com",
+        err_email: "Вкажіть дійсну адресу електронної пошти.",
+
+        label_phone: "Активний номер у месенджері (Telegram або WhatsApp)",
+        hint_phone: "Інструкція / Приклад: <code>5521988567849</code> або <code>380969501051</code> (код країни + код міста/мережі + номер)",
+        err_phone: "Введіть дійсний номер за зразком (напр. 5521988567849).",
+
+        label_arrival: "Коли ви можете прибути в Україну",
+        ph_arrival: "Наприклад: Негайно / Протягом 15 днів / Наступного місяця",
+
+        label_military: "Військовий досвід",
+        ph_military: "Коротко опишіть, якщо ви проходили службу в Збройних Силах, поліції, приватній охороні або маєте тактичні сертифікати.",
+
+        passport_notice_title: "Документи (Закордонний паспорт)",
+        passport_notice_body: "Фото або копію паспорта <strong>не потрібно завантажувати на сайті</strong>. Надішліть фото або PDF документа безпосередньо в чат <strong>WhatsApp (+380 96 950 1051)</strong> або <strong>Telegram (+48 796 977 298)</strong> одразу після перенаправлення за цією анкетою.",
+
+        btn_submit: "Надіслати Анкету Рекрутингу в Офіційний WhatsApp",
+        submit_disclaimer: "Після натискання дані будуть перевірені та скомпільовані для WhatsApp Рекрутера (<strong>+380 96 950 1051</strong>). Не забудьте надіслати фото паспорта безпосередньо у відкритому чаті.",
+
+        modal_title: "Анкета Готова до Відправки!",
+        modal_desc: "Ваша анкета рекрутингу успішно перевірена та сформована.",
+        modal_alert: "<strong>📌 ОБОВ'ЯЗКОВЕ ПОВІДОМЛЕННЯ (ПАСПОРТ):</strong><br>Ви будете перенаправлені у WhatsApp Рекрутера (<code>+380 96 950 1051</code>). Оскільки файли не передаються через посилання перенаправлення, <strong>надішліть фото або PDF вашого закордонного паспорта безпосередньо в чат WhatsApp або Telegram</strong> одразу після відкриття розмови!",
+        modal_summary_candidate: "Кандидат",
+        modal_summary_cit_lang: "Громадянство / Мова",
+        modal_summary_passport: "Паспорт",
+        modal_summary_passport_text: "Надіслати фото/копію безпосередньо в чат (WhatsApp або Telegram)",
+        modal_summary_phone: "Вказаний месенджер",
+        modal_btn_wa: "Відкрити WhatsApp Рекрутера Зараз",
+        modal_btn_tg: "Відкрити Telegram Рекрутера (+48 796 977 298)",
+        modal_btn_copy_tg: "📋 Скопіювати номер Telegram (+48 796 977 298)",
+        modal_btn_copy_tg_success: "✓ Номер Telegram скопійовано!",
+        modal_tg_hint: "💡 <em>Підказка:</em> Якщо Telegram повідомляє, що номер не знайдено, збережіть <strong>+48 796 977 298</strong> у контакти телефону або напишіть в офіційний WhatsApp.",
+        modal_btn_copy: "Скопіювати Дані Анкети",
+        modal_btn_copy_success: "✓ Дані Успішно Скопійовано!",
+        modal_btn_close: "Повернутися та Редагувати",
+
+        footer_brand_title: "ОФІЦІЙНИЙ РЕКРУТЕР",
+        footer_brand_desc: "Україна та ПАР • Переліт, Віза, Проживання та Повна Оплата.",
+        footer_channels_title: "Офіційні Канали Зв'язку:",
+        footer_copy: "&copy; 2026 РЕКРУТЕР. Створено за міжнародними протоколами відбору добровольців.",
+
+        citizenship_options: [
+            { value: "Brasileira", text: "Бразильське" },
+            { value: "Portuguesa", text: "Португальське" },
+            { value: "Sul-Africana", text: "Південноафриканське" },
+            { value: "Ucraniana", text: "Українське" },
+            { value: "Angolana", text: "Ангольське" },
+            { value: "Moçambicana", text: "Мозамбіцьке" },
+            { value: "Outra", text: "Інше" }
+        ],
+        native_lang_options: [
+            { value: "Português", text: "Португальська" },
+            { value: "Inglês", text: "Англійська" },
+            { value: "Espanhol", text: "Іспанська" },
+            { value: "Ucraniano", text: "Українська" },
+            { value: "Russo", text: "Російська" },
+            { value: "Outra", text: "Інша" }
+        ],
+
+        // WhatsApp Message
+        wa_header: "🛡️ *НОВА АНКЕТА РЕКРУТИНГУ - РЕКРУТЕР*",
+        wa_sec_personal: "👤 *ОСОБИСТА ІНФОРМАЦІЯ*",
+        wa_first_name: "Ім'я",
+        wa_last_name: "Прізвище",
+        wa_dob: "Дата народження",
+        wa_years: "років",
+        wa_citizenship: "Громадянство",
+        wa_native_lang: "Рідна мова",
+        wa_other_lang: "Інша мова",
+        wa_none_informed: "Не вказано",
+        wa_sec_docs: "📄 *ДОКУМЕНТИ (ПАСПОРТ)*",
+        wa_doc_item: "• *Закордонний паспорт:* Пряме надсилання фото/документа в цей чат (WhatsApp / Telegram)\n*(Кандидат надішле фото/PDF паспорта безпосередньо в чат)*",
+        wa_sec_contact: "📱 *КОНТАКТ ТА ГОТОВНІСТЬ*",
+        wa_email: "Ел. пошта",
+        wa_messenger: "Активний месенджер",
+        wa_military: "Військовий досвід",
+        wa_military_none: "Попередній військовий досвід не вказано",
+        wa_arrival: "Коли може прибути в Україну",
+        wa_arrival_default: "За домовленістю / Негайно",
+        wa_source: "🌐 *Джерело:* Офіційна Анкета Рекрутингу (Україна та ПАР)"
+    }
+};
+
+// Exportar se estiver em ambiente Node/CommonJS (para testes), senão expor no escopo global
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = TRANSLATIONS;
+}

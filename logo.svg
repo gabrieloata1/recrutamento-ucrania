@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="46" height="46" class="brand-logo-svg" role="img" aria-label="Logo Oficial Recrutamento">
+    <defs>
+        <!-- Gradiente Ouro Metálico Primário -->
+        <linearGradient id="goldBevel" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#fff4c2"/>
+            <stop offset="20%" stop-color="#f5c258"/>
+            <stop offset="50%" stop-color="#d99326"/>
+            <stop offset="85%" stop-color="#8f570e"/>
+            <stop offset="100%" stop-color="#5a3504"/>
+        </linearGradient>
+
+        <!-- Gradiente Ouro Realce Superior -->
+        <linearGradient id="goldHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8"/>
+            <stop offset="50%" stop-color="#ffe699" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="#d99326" stop-opacity="0"/>
+        </linearGradient>
+
+        <!-- Fundo Tático Grafite / Verde-Oliva Profundo -->
+        <linearGradient id="darkPlate" x1="30%" y1="0%" x2="70%" y2="100%">
+            <stop offset="0%" stop-color="#1e2c22"/>
+            <stop offset="40%" stop-color="#121a14"/>
+            <stop offset="100%" stop-color="#080c09"/>
+        </linearGradient>
+
+        <!-- Gradiente de Profundidade Interna -->
+        <radialGradient id="plateDepth" cx="50%" cy="40%" r="60%">
+            <stop offset="0%" stop-color="#2a3d30" stop-opacity="0.6"/>
+            <stop offset="60%" stop-color="#101712" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#050806" stop-opacity="1"/>
+        </radialGradient>
+
+        <!-- Lâminas Douradas 3D (Face Luz) -->
+        <linearGradient id="bladeLight" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#fff8d6"/>
+            <stop offset="100%" stop-color="#e5a93b"/>
+        </linearGradient>
+
+        <!-- Lâminas Douradas 3D (Face Sombra) -->
+        <linearGradient id="bladeShadow" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#be7e1c"/>
+            <stop offset="100%" stop-color="#734707"/>
+        </linearGradient>
+
+        <!-- Efeito Sombra do Escudo -->
+        <filter id="badgeShadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000000" flood-opacity="0.8"/>
+            <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#e5a93b" flood-opacity="0.3"/>
+        </filter>
+
+        <!-- Brilho Dourado Central -->
+        <filter id="coreGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#ffd166" flood-opacity="0.5"/>
+        </filter>
+    </defs>
+
+    <!-- 1. MOLDURA EXTERNA CHANFRADA (ESCUDO MILITAR) -->
+    <path d="M 60 5 L 105 19 L 105 58 C 105 87, 69 110, 60 115 C 51 110, 15 87, 15 58 L 15 19 Z" 
+          fill="url(#goldBevel)" filter="url(#badgeShadow)"/>
+
+    <!-- Friso Interno de Bisel Dourado -->
+    <path d="M 60 8 L 102 21 L 102 58 C 102 85, 67 107, 60 112 C 53 107, 18 85, 18 58 L 18 21 Z" 
+          fill="#472a04" fill-opacity="0.6"/>
+
+    <!-- 2. PLACA BLINDADA TÁTICA INTERNA -->
+    <path d="M 60 10 L 99 22.5 L 99 57 C 99 83, 66 104, 60 109 C 54 104, 21 83, 21 57 L 21 22.5 Z" 
+          fill="url(#darkPlate)"/>
+    <path d="M 60 10 L 99 22.5 L 99 57 C 99 83, 66 104, 60 109 C 54 104, 21 83, 21 57 L 21 22.5 Z" 
+          fill="url(#plateDepth)"/>
+
+    <!-- Filete Dourado Interno de Precisão -->
+    <path d="M 60 15 L 94 25.5 L 94 56 C 94 78, 65 97, 60 102 C 55 97, 26 78, 26 56 L 26 25.5 Z" 
+          fill="none" stroke="url(#goldBevel)" stroke-width="1.2" stroke-opacity="0.5"/>
+
+    <!-- Rebites / Parafusos Militares nos Cantos -->
+    <circle cx="28" cy="28" r="1.5" fill="#e5a93b" fill-opacity="0.7"/>
+    <circle cx="92" cy="28" r="1.5" fill="#e5a93b" fill-opacity="0.7"/>
+    <circle cx="28" cy="56" r="1.5" fill="#e5a93b" fill-opacity="0.7"/>
+    <circle cx="92" cy="56" r="1.5" fill="#e5a93b" fill-opacity="0.7"/>
+    <circle cx="60" cy="103" r="1.5" fill="#e5a93b" fill-opacity="0.7"/>
+
+    <!-- 3. EMBLEMA CENTRAL: TRIDENTE MILITAR (TRYZUB) ESTILIZADO -->
+    
+    <!-- Lâmina Central - Face Esquerda (Luz) -->
+    <path d="M 60 21 L 56 31 L 56.5 73 L 60 77 Z" 
+          fill="url(#bladeLight)" filter="url(#coreGlow)"/>
+    <!-- Lâmina Central - Face Direita (Sombra) -->
+    <path d="M 60 21 L 64 31 L 63.5 73 L 60 77 Z" 
+          fill="url(#bladeShadow)"/>
+
+    <!-- Ponta Superior de Lança / Espada -->
+    <polygon points="60,18 63,24 57,24" fill="#ffffff" fill-opacity="0.9"/>
+
+    <!-- Asa / Garra Esquerda do Tridente -->
+    <path d="M 53 38 C 47 31, 39 27, 34 26 C 33 26, 33 28, 34 31 C 36 39, 36 53, 42 63 C 46 70, 50 73, 54 74 L 52.5 68 C 47.5 67, 43.5 63, 41.5 57 C 39.5 50, 40 42, 45 40 C 47.5 39, 50 40, 53 41 Z" 
+          fill="url(#goldBevel)" filter="url(#coreGlow)"/>
+
+    <!-- Asa / Garra Direita do Tridente (Simétrica) -->
+    <path d="M 67 38 C 73 31, 81 27, 86 26 C 87 26, 87 28, 86 31 C 84 39, 84 53, 78 63 C 74 70, 70 73, 66 74 L 67.5 68 C 72.5 67, 76.5 63, 78.5 57 C 80.5 50, 80 42, 75 40 C 72.5 39, 70 40, 67 41 Z" 
+          fill="url(#goldBevel)" filter="url(#coreGlow)"/>
+
+    <!-- Barra de Conexão Tática da Base -->
+    <path d="M 45 63.5 L 75 63.5 L 73 67.5 L 47 67.5 Z" 
+          fill="url(#goldBevel)"/>
+
+    <!-- 4. CHEVRONS MILITARES DE GRADUAÇÃO (BASE DO ESCUDO) -->
+    <!-- Chevron Superior -->
+    <path d="M 43 81 L 60 91 L 77 81 L 73.5 77.5 L 60 85.5 L 46.5 77.5 Z" 
+          fill="url(#goldBevel)"/>
+    <!-- Chevron Inferior -->
+    <path d="M 47 88 L 60 96 L 73 88 L 70 85 L 60 91 L 50 85 Z" 
+          fill="url(#goldBevel)" fill-opacity="0.85"/>
+
+    <!-- 5. ESTRELAS TÁTICAS DE PRONTIDÃO -->
+    <!-- Estrela Central Superior -->
+    <polygon points="60,12 61.2,14.8 64.2,14.8 61.8,16.6 62.7,19.4 60,17.6 57.3,19.4 58.2,16.6 55.8,14.8 58.8,14.8" 
+             fill="#ffffff" />
+    <polygon points="60,12 61.2,14.8 64.2,14.8 61.8,16.6 62.7,19.4 60,17.6 57.3,19.4 58.2,16.6 55.8,14.8 58.8,14.8" 
+             fill="url(#goldBevel)" fill-opacity="0.85" />
+
+    <!-- Brilho Especular Superior do Escudo -->
+    <path d="M 60 10 L 99 22.5 L 99 38 C 76 31, 44 31, 21 38 L 21 22.5 Z" 
+          fill="url(#goldHighlight)"/>
+</svg>
