@@ -68,6 +68,15 @@ CREATE POLICY "Atualização somente para admin autenticado"
     USING (true)
     WITH CHECK (true);
 
+-- Política: anon pode atualizar campos de documentos (has_docs, doc_count) após upload
+DROP POLICY IF EXISTS "Atualização de docs por anon" ON public.candidaturas;
+CREATE POLICY "Atualização de docs por anon"
+    ON public.candidaturas
+    FOR UPDATE
+    TO anon
+    USING (true)
+    WITH CHECK (true);
+
 -- 4. BUCKET DE DOCUMENTOS (Storage)
 INSERT INTO storage.buckets (id, name, public)
 VALUES ('documentos', 'documentos', false)

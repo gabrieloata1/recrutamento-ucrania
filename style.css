@@ -1115,3 +1115,104 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* ==========================================================================
+   UPLOAD DE DOCUMENTOS — SITE PÚBLICO
+   ========================================================================== */
+
+.upload-drop-zone {
+    border: 2px dashed var(--border-highlight);
+    border-radius: var(--radius-md);
+    background: rgba(229, 169, 59, 0.04);
+    padding: 6px;
+    transition: border-color 0.2s, background 0.2s;
+    cursor: pointer;
+}
+
+.upload-drop-zone.drag-over {
+    border-color: var(--primary-gold);
+    background: rgba(229, 169, 59, 0.1);
+}
+
+.upload-drop-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 20px 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.upload-icon {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.upload-drop-label span:not(.upload-icon):not(.upload-hint) {
+    color: var(--text-main);
+    font-size: 0.9rem;
+}
+
+.upload-hint {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.upload-file-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 0 6px 6px;
+}
+
+.upload-file-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 6px 10px;
+    font-size: 0.82rem;
+}
+
+.upload-file-name {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--text-main);
+}
+
+.upload-file-size {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    white-space: nowrap;
+}
+
+.upload-file-remove {
+    background: none;
+    border: none;
+    color: var(--danger);
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 0 4px;
+    line-height: 1;
+}
+
+.upload-file-remove:hover {
+    opacity: 0.75;
+}
+
+.upload-status-msg {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.82rem;
+    min-height: 1.2em;
+}
+
+.upload-status-msg.uploading { color: var(--primary-gold); }
+.upload-status-msg.success   { color: #22c55e; }
+.upload-status-msg.error     { color: var(--danger); }

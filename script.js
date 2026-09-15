@@ -41,6 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnCopyText = document.getElementById('btnCopyText');
     const btnCloseModal = document.getElementById('btnCloseModal');
 
+    // Elementos de Upload de Documento
+    const docUploadPublic = document.getElementById('docUploadPublic');
+    const uploadDropZone = document.getElementById('uploadDropZone');
+    const uploadFileList = document.getElementById('uploadFileList');
+    const uploadStatusMsg = document.getElementById('uploadStatusMsg');
+    let selectedFiles = []; // Array de File objects selecionados pelo candidato
+
     // Configuração Centralizada de Contatos do Recrutador
     const RECRUITER_CONFIG = {
         whatsappNumber: '380969501051',
@@ -216,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
             }
             const protocolo = 'REC-' + new Date().getFullYear() + '-' + String(Math.floor(Date.now() / 1000) % 100000).padStart(5, '0');
-            const { error } = await supabaseClient
+            const { data: inserted, error } = await supabaseClient
                 .from('candidaturas')
                 .insert([{
                     nome: data.nome,
@@ -231,14 +238,87 @@ document.addEventListener('DOMContentLoaded', () => {
                     experiencia_militar: data.experienciaMilitar || null,
                     status: 'novo',
                     protocolo: protocolo
-                }]);
+                }])
+                .select('id')
+                .single();
 
             if (error) throw error;
-            return { success: true, protocolo: protocolo };
+            return { success: true, protocolo: protocolo, id: inserted?.id };
         } catch (err) {
             console.error('Erro ao salvar candidatura:', err);
             return { success: false, error: err.message };
         }
+    }
+
+    // =========================================================================
+    // UPLOAD DE DOCUMENTOS — DRAG & DROP + PREVIEW
+    // =========================================================================
+
+    function renderFileList() {
+        if (!uploadFileList) return;
+        if (selectedFiles.length === 0) {
+            uploadFileList.innerHTML = '';
+            return;
+        }
+        uploadFileList.innerHTML = selectedFiles.map((f, i) => `
+            <div class="upload-file-item">
+                <span class="upload-file-icon">${f.type.includes('pdf') ? '📄' : '🖼️'}</span>
+                <span class="upload-file-name">${f.name}</span>
+                <span class="upload-file-size">(${(f.size / 1024 / 1024).toFixed(2)} MB)</span>
+                <button type="button" class="upload-file-remove" onclick="removeFile(${i})">✕</button>
+            </div>
+        `).join('');
+    }
+
+    // Expor removeFile globalmente para o onclick inline
+    window.removeFile = function(index) {
+        selectedFiles.splice(index, 1);
+        renderFileList();
+    };
+
+    if (docUploadPublic) {
+        docUploadPublic.addEventListener('change', (e) => {
+            const files = Array.from(e.target.files);
+            selectedFiles = [...selectedFiles, ...files];
+            renderFileList();
+            docUploadPublic.value = '';
+        });
+    }
+
+    // Drag & drop
+    if (uploadDropZone) {
+        uploadDropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadDropZone.classList.add('drag-over');
+        });
+        uploadDropZone.addEventListener('dragleave', () => {
+            uploadDropZone.classList.remove('drag-over');
+        });
+        uploadDropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadDropZone.classList.remove('drag-over');
+            const files = Array.from(e.dataTransfer.files);
+            selectedFiles = [...selectedFiles, ...files];
+            renderFileList();
+        });
+    }
+
+    async function uploadDocumentsToSupabase(candidateId) {
+        if (!supabaseClient || selectedFiles.length === 0) return 0;
+        let uploaded = 0;
+        for (const file of selectedFiles) {
+            try {
+                const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, '_');
+                const path = `candidatos/${candidateId}/${Date.now()}_${safeName}`;
+                const { error } = await supabaseClient.storage
+                    .from('documentos')
+                    .upload(path, file, { cacheControl: '3600', upsert: false });
+                if (!error) uploaded++;
+            } catch (err) {
+                console.error('Erro ao fazer upload do arquivo:', file.name, err);
+            }
+        }
+        return uploaded;
     }
 
     // =========================================================================
@@ -361,6 +441,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const saveResult = await saveCandidaturaToSupabase(formData);
         lastSubmittedData = { ...formData, saveResult };
+
+        // =====================================================================
+        // UPLOAD DE DOCUMENTOS (se houver arquivos selecionados)
+        // =====================================================================
+        let uploadedCount = 0;
+        if (saveResult.success && saveResult.id && selectedFiles.length > 0) {
+            if (uploadStatusMsg) {
+                uploadStatusMsg.textContent = `⏳ Enviando ${selectedFiles.length} documento(s)...`;
+                uploadStatusMsg.className = 'upload-status-msg uploading';
+            }
+            uploadedCount = await uploadDocumentsToSupabase(saveResult.id);
+
+            // Atualizar has_docs e doc_count no registro da candidatura
+            if (uploadedCount > 0 && supabaseClient) {
+                await supabaseClient
+                    .from('candidaturas')
+                    .update({ has_docs: true, doc_count: uploadedCount })
+                    .eq('id', saveResult.id);
+            }
+
+            if (uploadStatusMsg) {
+                if (uploadedCount > 0) {
+                    uploadStatusMsg.textContent = `✅ ${uploadedCount} documento(s) enviado(s) com sucesso!`;
+                    uploadStatusMsg.className = 'upload-status-msg success';
+                } else {
+                    uploadStatusMsg.textContent = '⚠️ Não foi possível enviar os documentos. Tente novamente.';
+                    uploadStatusMsg.className = 'upload-status-msg error';
+                }
+            }
+        }
 
         btnSubmit.disabled = false;
         btnSubmitSpan.textContent = originalText;

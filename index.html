@@ -345,24 +345,33 @@
                             <textarea id="experienciaMilitar" name="experienciaMilitar" rows="3" placeholder="Descreva brevemente caso tenha servido às Forças Armadas (Exército, Marinha, Aeronáutica), Forças Policiais, Segurança Privada ou cursos táticos." data-i18n-ph="ph_military"></textarea>
                         </div>
 
-                        <!-- AVISO DE DOCUMENTAÇÃO (PASSAPORTE) -->
-                        <div class="passport-notice-box full-width">
-                            <div class="notice-title">
-                                <span>📌</span> <span data-i18n="passport_notice_title">Documentação (Passaporte Internacional)</span>
+                        <!-- UPLOAD DE DOCUMENTO -->
+                        <div class="form-group full-width" id="docUploadGroup">
+                            <label for="docUploadPublic">
+                                <span data-i18n="label_doc_upload">📎 Enviar Documento (Passaporte / RG / Certidão)</span>
+                                <span class="optional" data-i18n="optional_tag">(Opcional)</span>
+                            </label>
+                            <div class="upload-drop-zone" id="uploadDropZone">
+                                <input type="file" id="docUploadPublic" name="docUploadPublic"
+                                    accept=".pdf,.jpg,.jpeg,.png,.webp" multiple style="display:none;">
+                                <label for="docUploadPublic" class="upload-drop-label" id="uploadDropLabel">
+                                    <span class="upload-icon">📤</span>
+                                    <span data-i18n="upload_drop_text">Clique aqui ou arraste o arquivo (PDF, JPG, PNG)</span>
+                                    <span class="upload-hint" data-i18n="upload_hint_text">Máx. 10 MB por arquivo</span>
+                                </label>
+                                <div id="uploadFileList" class="upload-file-list"></div>
                             </div>
-                            <p data-i18n="passport_notice_body">
-                                A imagem ou cópia do passaporte <strong>não deve ser enviada pelo site</strong>. Envie a foto ou PDF do documento diretamente na conversa do <strong>WhatsApp (+380 96 950 1051)</strong> ou <strong>Telegram (+48 796 977 298)</strong> assim que você for redirecionado após o envio desta ficha.
-                            </p>
+                            <span id="uploadStatusMsg" class="upload-status-msg"></span>
                         </div>
                     </div>
 
                     <!-- BOTÃO DE ENVIO -->
                     <div class="form-submit-wrapper">
                         <button type="submit" id="btnSubmit" class="btn btn-submit">
-                            <span class="btn-icon">📲</span> <span data-i18n="btn_submit">Enviar Ficha de Recrutamento ao WhatsApp Oficial</span>
+                            <span class="btn-icon">📲</span> <span data-i18n="btn_submit">Enviar Ficha de Recrutamento</span>
                         </button>
                         <p class="submit-disclaimer" data-i18n="submit_disclaimer">
-                            Ao clicar em enviar, os dados serão validados e organizados no WhatsApp do Recrutador (<strong>+380 96 950 1051</strong>). Lembre-se de enviar a foto do passaporte diretamente na conversa aberta.
+                            Ao clicar em enviar, seus dados e documentos serão registrados com segurança e a equipe de recrutamento entrará em contato.
                         </p>
                     </div>
                 </div>
@@ -427,7 +436,7 @@
     </footer>
 
     <script src="translations.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
