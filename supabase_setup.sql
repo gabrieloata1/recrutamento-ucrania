@@ -1,1 +1,130 @@
-LS0gPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09Ci0tIFNVUEFCQVNFIFNFVFVQIOKAlCBSZWNydXRhbWVudG8gT2ZpY2lhbAotLSBFeGVjdXRlIGVzdGUgc2NyaXB0IG5vIFNRTCBFZGl0b3IgZG8gc2V1IHByb2pldG8gU3VwYWJhc2UKLS0gPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CgotLSAxLiBUQUJFTEEgREUgQ0FORElEQVRVUkFTCkNSRUFURSBUQUJMRSBJRiBOT1QgRVhJU1RTIHB1YmxpYy5jYW5kaWRhdHVyYXMgKAogICAgaWQgVVVJRCBERUZBVUxUIGdlbl9yYW5kb21fdXVpZCgpIFBSSU1BUlkgS0VZLAogICAgY3JlYXRlZF9hdCBUSU1FU1RBTVBUWiBERUZBVUxUIE5PVygpLAogICAgdXBkYXRlZF9hdCBUSU1FU1RBTVBUWiBERUZBVUxUIE5PVygpLAoKICAgIC0tIERhZG9zIHBlc3NvYWlzCiAgICBub21lIFRFWFQgTk9UIE5VTEwsCiAgICBzb2JyZW5vbWUgVEVYVCBOT1QgTlVMTCwKICAgIG5hc2NpbWVudG8gREFURSBOT1QgTlVMTCwKICAgIGNpZGFkYW5pYSBURVhULAogICAgbGluZ3VhX21hdGVybmEgVEVYVCwKICAgIG91dHJhX2xpbmd1YSBURVhULAoKICAgIC0tIENvbnRhdG8KICAgIGVtYWlsIFRFWFQgTk9UIE5VTEwsCiAgICB0ZWxlZm9uZSBURVhUIE5PVCBOVUxMLAoKICAgIC0tIEluZm9ybWHDp8O1ZXMgYWRpY2lvbmFpcwogICAgY2hlZ2FkYV91Y3JhbmlhIFRFWFQsCiAgICBleHBlcmllbmNpYV9taWxpdGFyIFRFWFQsCgogICAgLS0gQWRtaW5pc3RyYcOnw6NvIChwcmVlbmNoaWRvIHBlbG8gYWRtaW4gbm8gcGFpbmVsKQogICAgc3RhdHVzIFRFWFQgREVGQVVMVCAnbm92bycgQ0hFQ0sgKHN0YXR1cyBJTiAoJ25vdm8nLCAnZW1fYW5hbGlzZScsICdhcHJvdmFkbycsICdyZWplaXRhZG8nKSksCiAgICBhZG1pbl9ub3RlcyBURVhULAogICAgaGFzX2RvY3MgQk9PTEVBTiBERUZBVUxUIEZBTFNFLAogICAgZG9jX2NvdW50IElOVEVHRVIgREVGQVVMVCAwLAoKICAgIC0tIFByb3RvY29sbyBnZXJhZG8gYXV0b21hdGljYW1lbnRlCiAgICBwcm90b2NvbG8gVEVYVCBHRU5FUkFURUQgQUxXQVlTIEFTICgKICAgICAgICAnUkVDLScgfHwgVE9fQ0hBUihjcmVhdGVkX2F0LCAnWVlZWScpIHx8ICctJyB8fCBMUEFEKEVYVFJBQ1QoRVBPQ0ggRlJPTSBjcmVhdGVkX2F0KTo6SU5URUdFUiAlIDEwMDAwMCwgNSwgJzAnKQogICAgKSBTVE9SRUQKKTsKCi0tIDIuIMONTkRJQ0VTIFBBUkEgQlVTQ0EgUsOBUElEQQpDUkVBVEUgSU5ERVggSUYgTk9UIEVYSVNUUyBpZHhfY2FuZGlkYXR1cmFzX2VtYWlsIE9OIHB1YmxpYy5jYW5kaWRhdHVyYXMoZW1haWwpOwpDUkVBVEUgSU5ERVggSUYgTk9UIEVYSVNUUyBpZHhfY2FuZGlkYXR1cmFzX3N0YXR1cyBPTiBwdWJsaWMuY2FuZGlkYXR1cmFzKHN0YXR1cyk7CkNSRUFURSBJTkRFWCBJRiBOT1QgRVhJU1RTIGlkeF9jYW5kaWRhdHVyYXNfY3JlYXRlZF9hdCBPTiBwdWJsaWMuY2FuZGlkYXR1cmFzKGNyZWF0ZWRfYXQgREVTQyk7CgotLSAzLiBST1cgTEVWRUwgU0VDVVJJVFkgKFJMUykKQUxURVIgVEFCTEUgcHVibGljLmNhbmRpZGF0dXJhcyBFTkFCTEUgUk9XIExFVkVMIFNFQ1VSSVRZOwoKLS0gUG9sw610aWNhOiBxdWFscXVlciBwZXNzb2EgcG9kZSBJTlNFUklSIChmb3JtdWzDoXJpbyBww7pibGljbyBkbyBzaXRlKQpDUkVBVEUgUE9MSUNZICJJbnNlcsOnw6NvIHDDumJsaWNhIGRlIGNhbmRpZGF0dXJhcyIKICAgIE9OIHB1YmxpYy5jYW5kaWRhdHVyYXMKICAgIEZPUiBJTlNFUlQKICAgIFRPIGFub24sIGF1dGhlbnRpY2F0ZWQKICAgIFdJVEggQ0hFQ0sgKHRydWUpOwoKLS0gUG9sw610aWNhOiBzb21lbnRlIHVzdcOhcmlvcyBhdXRlbnRpY2Fkb3MgKGFkbWluKSBwb2RlbSBMRVIKQ1JFQVRFIFBPTElDWSAiTGVpdHVyYSBzb21lbnRlIHBhcmEgYWRtaW4gYXV0ZW50aWNhZG8iCiAgICBPTiBwdWJsaWMuY2FuZGlkYXR1cmFzCiAgICBGT1IgU0VMRUNUCiAgICBUTyBhdXRoZW50aWNhdGVkCiAgICBVU0lORyAodHJ1ZSk7CgotLSBQb2zDrXRpY2E6IHNvbWVudGUgdXN1w6FyaW9zIGF1dGVudGljYWRvcyBwb2RlbSBBVFVBTElaQVIgKHN0YXR1cywgbm90YXMpCkNSRUFURSBQT0xJQ1kgIkF0dWFsaXphw6fDo28gc29tZW50ZSBwYXJhIGFkbWluIGF1dGVudGljYWRvIgogICAgT04gcHVibGljLmNhbmRpZGF0dXJhcwogICAgRk9SIFVQREFURQogICAgVE8gYXV0aGVudGljYXRlZAogICAgVVNJTkcgKHRydWUpCiAgICBXSVRIIENIRUNLICh0cnVlKTsKCi0tIDQuIEJVQ0tFVCBERSBET0NVTUVOVE9TIChTdG9yYWdlKQotLSBFeGVjdXRlIHZpYSBEYXNoYm9hcmQgZG8gU3VwYWJhc2U6IFN0b3JhZ2UgPiBOZXcgQnVja2V0Ci0tIE5vbWU6IGRvY3VtZW50b3MKLS0gUHJpdmFkbyAoc2VtIGFjZXNzbyBww7pibGljbykKLS0gT3UgdmlhIFNRTDoKSU5TRVJUIElOVE8gc3RvcmFnZS5idWNrZXRzIChpZCwgbmFtZSwgcHVibGljKQpWQUxVRVMgKCdkb2N1bWVudG9zJywgJ2RvY3VtZW50b3MnLCBmYWxzZSkKT04gQ09ORkxJQ1QgKGlkKSBETyBOT1RISU5HOwoKLS0gUG9sw610aWNhIFN0b3JhZ2U6IHF1YWxxdWVyIHBlc3NvYSBwb2RlIGZhemVyIHVwbG9hZCAoY2FuZGlkYXRvcyBlbnZpYW5kbyBkb2NzKQpDUkVBVEUgUE9MSUNZICJVcGxvYWQgcMO6YmxpY28gZGUgZG9jdW1lbnRvcyIKICAgIE9OIHN0b3JhZ2Uub2JqZWN0cwogICAgRk9SIElOU0VSVAogICAgVE8gYW5vbiwgYXV0aGVudGljYXRlZAogICAgV0lUSCBDSEVDSyAoYnVja2V0X2lkID0gJ2RvY3VtZW50b3MnKTsKCi0tIFBvbMOtdGljYSBTdG9yYWdlOiBzb21lbnRlIGFkbWluIGF1dGVudGljYWRvIHBvZGUgbGVyL2JhaXhhciBkb2N1bWVudG9zCkNSRUFURSBQT0xJQ1kgIkxlaXR1cmEgZGUgZG9jdW1lbnRvcyBzb21lbnRlIHBhcmEgYWRtaW4iCiAgICBPTiBzdG9yYWdlLm9iamVjdHMKICAgIEZPUiBTRUxFQ1QKICAgIFRPIGF1dGhlbnRpY2F0ZWQKICAgIFVTSU5HIChidWNrZXRfaWQgPSAnZG9jdW1lbnRvcycpOwoKLS0gUG9sw610aWNhIFN0b3JhZ2U6IHNvbWVudGUgYWRtaW4gYXV0ZW50aWNhZG8gcG9kZSBkZWxldGFyIGRvY3VtZW50b3MKQ1JFQVRFIFBPTElDWSAiRXhjbHVzw6NvIGRlIGRvY3VtZW50b3Mgc29tZW50ZSBwYXJhIGFkbWluIgogICAgT04gc3RvcmFnZS5vYmplY3RzCiAgICBGT1IgREVMRVRFCiAgICBUTyBhdXRoZW50aWNhdGVkCiAgICBVU0lORyAoYnVja2V0X2lkID0gJ2RvY3VtZW50b3MnKTsKCi0tIDUuIFRSSUdHRVI6IGF0dWFsaXphciB1cGRhdGVkX2F0IGF1dG9tYXRpY2FtZW50ZQpDUkVBVEUgT1IgUkVQTEFDRSBGVU5DVElPTiB1cGRhdGVfdXBkYXRlZF9hdF9jb2x1bW4oKQpSRVRVUk5TIFRSSUdHRVIgQVMgJCQKQkVHSU4KICAgIE5FVy51cGRhdGVkX2F0ID0gTk9XKCk7CiAgICBSRVRVUk4gTkVXOwpFTkQ7CiQkIGxhbmd1YWdlICdwbHBnc3FsJzsKCkNSRUFURSBUUklHR0VSIHVwZGF0ZV9jYW5kaWRhdHVyYXNfdXBkYXRlZF9hdAogICAgQkVGT1JFIFVQREFURSBPTiBwdWJsaWMuY2FuZGlkYXR1cmFzCiAgICBGT1IgRUFDSCBST1cKICAgIEVYRUNVVEUgUFJPQ0VEVVJFIHVwZGF0ZV91cGRhdGVkX2F0X2NvbHVtbigpOwo=
+-- ============================================================
+-- SUPABASE SETUP — Recrutamento Oficial
+-- Execute este script no SQL Editor do seu projeto Supabase
+-- ============================================================
+
+-- 1. TABELA DE CANDIDATURAS
+CREATE TABLE IF NOT EXISTS public.candidaturas (
+    id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    updated_at TIMESTAMPTZ DEFAULT NOW(),
+
+    -- Dados pessoais
+    nome TEXT NOT NULL,
+    sobrenome TEXT NOT NULL,
+    nascimento DATE NOT NULL,
+    cidadania TEXT,
+    lingua_materna TEXT,
+    outra_lingua TEXT,
+
+    -- Contato
+    email TEXT NOT NULL,
+    telefone TEXT NOT NULL,
+
+    -- Informações adicionais
+    chegada_ucrania TEXT,
+    experiencia_militar TEXT,
+
+    -- Administração (preenchido pelo admin no painel)
+    status TEXT DEFAULT 'novo' CHECK (status IN ('novo', 'em_analise', 'aprovado', 'rejeitado')),
+    admin_notes TEXT,
+    has_docs BOOLEAN DEFAULT FALSE,
+    doc_count INTEGER DEFAULT 0,
+
+    -- Protocolo único gerado
+    protocolo TEXT
+);
+
+-- 2. ÍNDICES PARA BUSCA RÁPIDA
+CREATE INDEX IF NOT EXISTS idx_candidaturas_email ON public.candidaturas(email);
+CREATE INDEX IF NOT EXISTS idx_candidaturas_status ON public.candidaturas(status);
+CREATE INDEX IF NOT EXISTS idx_candidaturas_created_at ON public.candidaturas(created_at DESC);
+
+-- 3. ROW LEVEL SECURITY (RLS)
+ALTER TABLE public.candidaturas ENABLE ROW LEVEL SECURITY;
+
+-- Política: qualquer pessoa pode INSERIR (formulário público do site)
+DROP POLICY IF EXISTS "Inserção pública de candidaturas" ON public.candidaturas;
+CREATE POLICY "Inserção pública de candidaturas"
+    ON public.candidaturas
+    FOR INSERT
+    TO anon, authenticated
+    WITH CHECK (true);
+
+-- Política: somente usuários autenticados (admin) podem LER
+DROP POLICY IF EXISTS "Leitura somente para admin autenticado" ON public.candidaturas;
+CREATE POLICY "Leitura somente para admin autenticado"
+    ON public.candidaturas
+    FOR SELECT
+    TO authenticated
+    USING (true);
+
+-- Política: somente usuários autenticados podem ATUALIZAR (status, notas)
+DROP POLICY IF EXISTS "Atualização somente para admin autenticado" ON public.candidaturas;
+CREATE POLICY "Atualização somente para admin autenticado"
+    ON public.candidaturas
+    FOR UPDATE
+    TO authenticated
+    USING (true)
+    WITH CHECK (true);
+
+-- 4. BUCKET DE DOCUMENTOS (Storage)
+INSERT INTO storage.buckets (id, name, public)
+VALUES ('documentos', 'documentos', false)
+ON CONFLICT (id) DO NOTHING;
+
+-- Política Storage: qualquer pessoa pode fazer upload (candidatos enviando docs)
+DROP POLICY IF EXISTS "Upload público de documentos" ON storage.objects;
+CREATE POLICY "Upload público de documentos"
+    ON storage.objects
+    FOR INSERT
+    TO anon, authenticated
+    WITH CHECK (bucket_id = 'documentos');
+
+-- Política Storage: somente admin autenticado pode ler/baixar documentos
+DROP POLICY IF EXISTS "Leitura de documentos somente para admin" ON storage.objects;
+CREATE POLICY "Leitura de documentos somente para admin"
+    ON storage.objects
+    FOR SELECT
+    TO authenticated
+    USING (bucket_id = 'documentos');
+
+-- Política Storage: somente admin autenticado pode deletar documentos
+DROP POLICY IF EXISTS "Exclusão de documentos somente para admin" ON storage.objects;
+CREATE POLICY "Exclusão de documentos somente para admin"
+    ON storage.objects
+    FOR DELETE
+    TO authenticated
+    USING (bucket_id = 'documentos');
+
+-- 5. TRIGGER: atualizar updated_at automaticamente
+CREATE OR REPLACE FUNCTION update_updated_at_column()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.updated_at = NOW();
+    RETURN NEW;
+END;
+$$ language 'plpgsql';
+
+DROP TRIGGER IF EXISTS update_candidaturas_updated_at ON public.candidaturas;
+CREATE TRIGGER update_candidaturas_updated_at
+    BEFORE UPDATE ON public.candidaturas
+    FOR EACH ROW
+    EXECUTE PROCEDURE update_updated_at_column();
+
+-- 6. TRIGGER: gerar protocolo caso não enviado pelo cliente
+CREATE OR REPLACE FUNCTION set_candidatura_protocolo()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF NEW.protocolo IS NULL OR NEW.protocolo = '' THEN
+        NEW.protocolo := 'REC-' || TO_CHAR(COALESCE(NEW.created_at, NOW()), 'YYYY') || '-' || LPAD(((EXTRACT(EPOCH FROM COALESCE(NEW.created_at, NOW()))::BIGINT % 100000))::TEXT, 5, '0');
+    END IF;
+    RETURN NEW;
+END;
+$$ language 'plpgsql';
+
+DROP TRIGGER IF EXISTS set_candidaturas_protocolo ON public.candidaturas;
+CREATE TRIGGER set_candidaturas_protocolo
+    BEFORE INSERT ON public.candidaturas
+    FOR EACH ROW
+    EXECUTE PROCEDURE set_candidatura_protocolo();
