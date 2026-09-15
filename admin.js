@@ -24,12 +24,13 @@ const ADMIN_TRANSLATIONS = {
     pt: {
         loginTitle: 'PAINEL ADMINISTRATIVO',
         loginSubtitle: 'Recrutamento Oficial — Área Restrita',
-        labelEmail: 'E-mail',
+        labelEmail: 'Usuário',
+        placeholderUser: 'Ice ou seu e-mail',
         labelPassword: 'Senha',
         btnLoginText: 'Entrar no Painel',
         loginNote: 'Acesso exclusivo para administradores autorizados.',
-        loginError: 'E-mail ou senha inválidos. Tente novamente.',
-        loginErrorUnknown: 'Erro ao conectar. Verifique sua conexão.',
+        loginError: 'Usuário ou senha inválidos. Tente novamente.',
+        loginErrorUnknown: 'Erro ao conectar. Verifique sua conexão com a internet.',
         adminBrand: 'PAINEL ADMIN',
         adminBrandSub: 'Recrutamento Oficial',
         logoutLabel: 'Sair',
@@ -94,12 +95,13 @@ const ADMIN_TRANSLATIONS = {
     es: {
         loginTitle: 'PANEL ADMINISTRATIVO',
         loginSubtitle: 'Reclutamiento Oficial — Área Restringida',
-        labelEmail: 'Correo electrónico',
+        labelEmail: 'Usuario',
+        placeholderUser: 'Ice o su correo',
         labelPassword: 'Contraseña',
         btnLoginText: 'Ingresar al Panel',
         loginNote: 'Acceso exclusivo para administradores autorizados.',
-        loginError: 'Correo o contraseña inválidos. Intente de nuevo.',
-        loginErrorUnknown: 'Error de conexión. Verifique su conexión  internet.',
+        loginError: 'Usuario o contraseña inválidos. Intente de nuevo.',
+        loginErrorUnknown: 'Error de conexión. Verifique su conexión a internet.',
         adminBrand: 'PANEL ADMIN',
         adminBrandSub: 'Reclutamiento Oficial',
         logoutLabel: 'Salir',
@@ -240,6 +242,7 @@ function applyTranslations() {
     setText('loginTitle', t('loginTitle'));
     setText('loginSubtitle', t('loginSubtitle'));
     setText('labelEmail', t('labelEmail'));
+    setAttr('loginEmail', 'placeholder', t('placeholderUser'));
     setText('labelPassword', t('labelPassword'));
     setText('btnLoginText', t('btnLoginText'));
     setText('loginNote', t('loginNote'));
@@ -346,13 +349,23 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Login form
     document.getElementById('loginForm').addEventListener('submit', async (e) => {
         e.preventDefault();
-        const email = document.getElementById('loginEmail').value.trim();
+        const rawInput = document.getElementById('loginEmail').value.trim();
         const password = document.getElementById('loginPassword').value;
         const btnText = document.getElementById('btnLoginText');
         const errEl = document.getElementById('loginError');
 
         errEl.classList.add('hidden');
         btnText.textContent = '...';
+
+        // Suporte a login por usuário (ex: "Ice") ou e-mail
+        let email = rawInput;
+        if (!rawInput.includes('@')) {
+            if (rawInput.toLowerCase() === 'ice') {
+                email = 'ice@admin.com';
+            } else {
+                email = `${rawInput.toLowerCase()}@admin.com`;
+            }
+        }
 
         const { data, error } = await supabase.auth.signInWithPassword({ email, password });
 
@@ -393,7 +406,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 function showPanel(user) {
     document.getElementById('loginScreen').classList.add('hidden');
     document.getElementById('adminPanel').classList.remove('hidden');
-    document.getElementById('userEmailDisplay').textContent = user.email || 'admin';
+    const displayName = user.user_metadata?.username || (user.email === 'ice@admin.com' ? 'Ice' : user.email) || 'admin';
+    document.getElementById('userEmailDisplay').textContent = displayName;
     loadCandidates();
 }
 
