@@ -16,7 +16,7 @@ const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 const DOCS_BUCKET = 'documentos';                                   // nome do bucket
 
 const { createClient } = window.supabase;
-const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // =========================================================================
 // TRADUÇÕES DO PAINEL (PT e ES)
@@ -342,7 +342,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     applyTranslations();
 
     // Verificar sessão existente
-    const { data: { session } } = await supabase.auth.getSession();
+    const { data: { session } } = await supabaseClient.auth.getSession();
     if (session) {
         showPanel(session.user);
     }
@@ -368,7 +368,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         }
 
-        const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+        const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
 
         if (error) {
             errEl.textContent = error.status === 400 ? t('loginError') : t('loginErrorUnknown');
@@ -384,7 +384,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const btnLogout = document.getElementById('btnLogout');
     if (btnLogout) {
         btnLogout.addEventListener('click', async () => {
-            await supabase.auth.signOut();
+            await supabaseClient.auth.signOut();
             document.getElementById('adminPanel').classList.add('hidden');
             document.getElementById('loginScreen').classList.remove('hidden');
         });
@@ -418,7 +418,7 @@ function showPanel(user) {
 async function loadCandidates() {
     showLoading(true);
     try {
-        const { data, error } = await supabase
+        const { data, error } = await supabaseClient
             .from('candidaturas')
             .select('*')
             .order('created_at', { ascending: false });
@@ -603,7 +603,7 @@ async function updateCandidateStatus() {
     const newStatus = document.getElementById('statusSelect').value;
     const savedMsg = document.getElementById('statusSavedMsg');
 
-    const { error } = await supabase
+    const { error } = await supabaseClient
         .from('candidaturas')
         .update({ status: newStatus, updated_at: new Date().toISOString() })
         .eq('id', currentCandidate.id);
@@ -630,7 +630,7 @@ async function saveNotes() {
     const notes = document.getElementById('adminNotes').value;
     const savedMsg = document.getElementById('notesSavedMsg');
 
-    const { error } = await supabase
+    const { error } = await supabaseClient
         .from('candidaturas')
         .update({ admin_notes: notes, updated_at: new Date().toISOString() })
         .eq('id', currentCandidate.id);
@@ -650,7 +650,7 @@ async function loadCandidateDocs(candidateId) {
     const container = document.getElementById('docsContainer');
     container.innerHTML = `<div class="docs-loading">${t('docsLoading')}</div>`;
 
-    const { data: files, error } = await supabase.storage
+    const { data: files, error } = await supabaseClient.storage
         .from(DOCS_BUCKET)
         .list(`candidatos/${candidateId}`, { limit: 50, offset: 0 });
 
@@ -678,7 +678,7 @@ async function loadCandidateDocs(candidateId) {
 }
 
 async function downloadDoc(candidateId, fileName) {
-    const { data, error } = await supabase.storage
+    const { data, error } = await supabaseClient.storage
         .from(DOCS_BUCKET)
         .createSignedUrl(`candidatos/${candidateId}/${fileName}`, 60);
 
@@ -689,7 +689,7 @@ async function downloadDoc(candidateId, fileName) {
 async function deleteDoc(candidateId, fileName) {
     if (!confirm(t('confirmDelete'))) return;
 
-    const { error } = await supabase.storage
+    const { error } = await supabaseClient.storage
         .from(DOCS_BUCKET)
         .remove([`candidatos/${candidateId}/${fileName}`]);
 
@@ -709,7 +709,7 @@ async function uploadDocs(event) {
 
     for (const file of files) {
         const path = `candidatos/${currentCandidate.id}/${Date.now()}_${file.name}`;
-        const { error } = await supabase.storage
+        const { error } = await supabaseClient.storage
             .from(DOCS_BUCKET)
             .upload(path, file, { cacheControl: '3600', upsert: false });
 
@@ -719,7 +719,7 @@ async function uploadDocs(event) {
     }
 
     // Atualizar flag no registro
-    await supabase
+    await supabaseClient
         .from('candidaturas')
         .update({ has_docs: true })
         .eq('id', currentCandidate.id);
