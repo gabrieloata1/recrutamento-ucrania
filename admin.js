@@ -15,7 +15,8 @@ const SUPABASE_URL = 'https://zmraktthccacdusrmdua.supabase.co';         // ← 
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InptcmFrdHRoY2NhY2R1c3JtZHVhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUxMDEwNjYsImV4cCI6MjA5MDY3NzA2Nn0.yyDSggN_tKdDARWxgoexQKPi4SBMj7uAQ3E4BZ-P7N8';                  // ← SUBSTITUIR
 const DOCS_BUCKET = 'documentos';                                   // nome do bucket
 
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const { createClient } = window.supabase;
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // =========================================================================
 // TRADUÇÕES DO PAINEL (PT e ES)
