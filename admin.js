@@ -41,10 +41,10 @@ const ADMIN_TRANSLATIONS = {
         statLabelApproved: 'Aprovados',
         searchPlaceholder: 'Buscar por nome, email, telefone...',
         filterAll: 'Todos os Status',
-        filterNovo: '🔡 Novo',
-        filterAnalise: '🔆 Em Análise',
-        filterAprovado: '<!-- raw emoji -->🔢 Aprovado',
-        filterRejeitado: '🔔 Rejeitado',
+        filterNovo: '🆕 Novo',
+        filterAnalise: '🟡 Em Análise',
+        filterAprovado: '✅ Aprovado',
+        filterRejeitado: '❌ Rejeitado',
         refreshLabel: 'Atualizar',
         exportLabel: 'Exportar CSV',
         loadingText: 'Carregando candidatos...',
@@ -60,17 +60,19 @@ const ADMIN_TRANSLATIONS = {
         thDocs: 'Docs',
         thActions: 'Ações',
         btnView: 'Ver Ficha',
-        statusNovo: '🔡 Novo',
-        statusEmAnalise: '🔆 Em Análise',
-        statusAprovado: '<!-- raw emoji -->🔢 Aprovado',
-        statusRejeitado: '🔔 Rejeitado',
+        statusNovo: '🆕 Novo',
+        statusEmAnalise: '🟡 Em Análise',
+        statusAprovado: '✅ Aprovado',
+        statusRejeitado: '❌ Rejeitado',
         modalSecPersonal: '📋 Dados Pessoais',
-        modalSecContact: '💡 Contato',
-        modalSecMilitary: '🩦 Experiência Militar',
-        modalSecStatus: '<!-- raw emoji -->⚙️ Status do Processo',
-        modalSecNotes: '👝 Notas Internas',
-        modalSecDocs: '🔁 Documentos Enviados',
+        modalSecContact: '📱 Contato',
+        modalSecMilitary: '🎖️ Experiência Militar',
+        modalSecStatus: '⚙️ Status do Processo',
+        modalSecNotes: '📝 Notas Internas',
+        modalSecDocs: '📁 Documentos Enviados (PDF / Imagem)',
         detLabelNome: 'Nome Completo',
+        detLabelProtocolo: 'Protocolo Oficial',
+        detLabelCreatedAt: 'Data de Cadastro',
         detLabelDOB: 'Data de Nascimento',
         detLabelCit: 'Cidadania',
         detLabelNativeLang: 'Língua Materna',
@@ -81,12 +83,13 @@ const ADMIN_TRANSLATIONS = {
         notesSaved: '✓ Notas salvas!',
         statusSaved: '✓ Salvo!',
         docsLoading: 'Carregando documentos...',
-        noDocs: 'Nenhum documento enviado ainda.',
-        btnDownload: '↯ Baixar',
-        btnDelete: '👓D Deletar',
-        uploadText: '🐮 Adicionar documento (PDF/Imagem)',
-        uploadSuccess: 'Documento enviado com sucesso!',
-        uploadError: 'Erro ao enviar documento.',
+        noDocs: 'Nenhum documento enviado pelo candidato.',
+        btnDownload: 'Baixar Documento',
+        btnViewDoc: 'Visualizar',
+        btnDelete: 'Excluir',
+        uploadText: 'Anexar documento adicional (PDF ou Imagem)',
+        uploadSuccess: 'Documento anexado com sucesso!',
+        uploadError: 'Erro ao anexar documento.',
         btnClose: 'Fechar',
         confirmDelete: 'Deseja realmente excluir este documento?',
         ageYears: 'anos',
@@ -112,14 +115,14 @@ const ADMIN_TRANSLATIONS = {
         statLabelApproved: 'Aprobados',
         searchPlaceholder: 'Buscar por nombre, email, teléfono...',
         filterAll: 'Todos los Estados',
-        filterNovo: '🔡 Nuevo',
-        filterAnalise: '🔆 En Análisis',
-        filterAprovado: '🔢 Aprobado',
-        filterRejeitado: '🔔 Rechazado',
+        filterNovo: '🆕 Nuevo',
+        filterAnalise: '🟡 En Análisis',
+        filterAprovado: '✅ Aprovado',
+        filterRejeitado: '❌ Rechazado',
         refreshLabel: 'Actualizar',
         exportLabel: 'Exportar CSV',
         loadingText: 'Cargando candidatos...',
-        emptyText: 'Ningun candidato encontrado.',
+        emptyText: 'Ningún candidato encontrado.',
         thId: '#',
         thName: 'Nombre',
         thCitizenship: 'Ciudadanía',
@@ -131,17 +134,19 @@ const ADMIN_TRANSLATIONS = {
         thDocs: 'Docs',
         thActions: 'Acciones',
         btnView: 'Ver Ficha',
-        statusNovo: '🔡 Nuevo',
-        statusEmAnalise: '🔆 En Análisis',
-        statusAprovado: '🔢 Aprobado',
-        statusRejeitado: '🔔 Rechazado',
+        statusNovo: '🆕 Nuevo',
+        statusEmAnalise: '🟡 En Análisis',
+        statusAprovado: '✅ Aprobado',
+        statusRejeitado: '❌ Rechazado',
         modalSecPersonal: '📋 Datos Personales',
-        modalSecContact: '💡 Contacto',
-        modalSecMilitary: '🩦 Experiencia Militar',
+        modalSecContact: '📱 Contacto',
+        modalSecMilitary: '🎖️ Experiencia Militar',
         modalSecStatus: '⚙️ Estado del Proceso',
-        modalSecNotes: '👝 Notas Internas',
-        modalSecDocs: '🔁 Documentos Enviados',
+        modalSecNotes: '📝 Notas Internas',
+        modalSecDocs: '📁 Documentos Enviados (PDF / Imagen)',
         detLabelNome: 'Nombre Completo',
+        detLabelProtocolo: 'Protocolo Oficial',
+        detLabelCreatedAt: 'Fecha de Registro',
         detLabelDOB: 'Fecha de Nacimiento',
         detLabelCit: 'Ciudadanía',
         detLabelNativeLang: 'Lengua Materna',
@@ -150,14 +155,15 @@ const ADMIN_TRANSLATIONS = {
         detLabelPhone: 'Teléfono / Mensajero',
         notesPlaceholder: 'Añadir observaciones sobre este candidato...',
         notesSaved: '✓ ¡Notas guardadas!',
-        statusSaved: '⌓ ¡Guardado!',
+        statusSaved: '✓ ¡Guardado!',
         docsLoading: 'Cargando documentos...',
-        noDocs: 'Ningún documento enviado aún.',
-        btnDownload: '↷ Descargar',
-        btnDelete: '👓D Eliminar',
-        uploadText: '🐮 Agregar documento (PDF/Imagen)',
-        uploadSuccess: '¡Documento enviado exitosamente!',
-        uploadError: 'Error al enviar el documento.',
+        noDocs: 'Ningún documento enviado por el candidato.',
+        btnDownload: 'Descargar Documento',
+        btnViewDoc: 'Ver Documento',
+        btnDelete: 'Eliminar',
+        uploadText: 'Adjuntar documento adicional (PDF o Imagen)',
+        uploadSuccess: '¡Documento adjuntado exitosamente!',
+        uploadError: 'Error al adjuntar el documento.',
         btnClose: 'Cerrar',
         confirmDelete: '¿Desea eliminar este documento?',
         ageYears: 'años',
@@ -493,15 +499,16 @@ function renderTable(candidates) {
     const tbody = document.getElementById('candidatesBody');
     tbody.innerHTML = candidates.map((c, idx) => {
         const age = calculateAge(c.nascimento);
-        const status = c.status || 'novo' ;
+        const status = c.status || 'novo';
         const docsHtml = c.has_docs
-            ? `<span class="docs-badge has-docs">📄 ${c.doc_count || '?'}</span>`
+            ? `<span class="docs-badge has-docs" title="${c.doc_count || 1} doc(s)">📁 ${c.doc_count || 1}</span>`
             : `<span class="docs-badge no-docs">—</span>`;
 
-        return `<tr>
+        return `<tr class="candidate-row" onclick="openCandidate('${c.id}')" title="Clique para ver a ficha completa de ${escapeHtml(c.nome)}">
             <td style="color:var(--text-muted);font-size:0.78rem;">#${String(idx + 1).padStart(3, '0')}</td>
             <td>
-                <div style="font-weight:600;">${escapeHtml(c.nome)} ${escapeHtml(c.sobrenome)}</div>
+                <div style="font-weight:600;color:var(--text-primary);">${escapeHtml(c.nome)} ${escapeHtml(c.sobrenome)}</div>
+                ${c.protocolo ? `<div style="font-size:0.72rem;color:var(--accent);font-family:monospace;margin-top:2px;">#${escapeHtml(c.protocolo)}</div>` : ''}
             </td>
             <td>${escapeHtml(c.cidadania || '—')}</td>
             <td>${escapeHtml(c.lingua_materna || '—')}</td>
@@ -514,7 +521,7 @@ function renderTable(candidates) {
             <td><span class="${statusClass(status)}">${statusLabel(status)}</span></td>
             <td>${docsHtml}</td>
             <td>
-                <button class="btn-view" onclick="openCandidate('${c.id}')">${t('btnView')}</button>
+                <button class="btn-view" onclick="event.stopPropagation(); openCandidate('${c.id}')">${t('btnView')}</button>
             </td>
         </tr>`;
     }).join('');
@@ -526,20 +533,37 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
+function formatFileSize(bytes) {
+    if (!bytes || bytes === 0) return '0 B';
+    const k = 1024;
+    const sizes = ['B', 'KB', 'MB', 'GB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
+}
+
 // =========================================================================
 // ABRIR FICHA DO CANDIDATO
 // =========================================================================
-function openCandidate(id) {
+async function openCandidate(id) {
     const candidate = allCandidates.find(c => c.id === id);
     if (!candidate) return;
     currentCandidate = candidate;
 
     // Cabeçalho do modal
     setText('modalCandidateName', `${candidate.nome} ${candidate.sobrenome}`);
-    setText('modalCandidateId', `ID: ${candidate.id}`);
+
+    // Protocolo & ID
+    const protoEl = document.getElementById('modalProtocolBadge');
+    if (protoEl) {
+        protoEl.textContent = candidate.protocolo ? `#${candidate.protocolo}` : 'Sem Protocolo';
+        protoEl.style.display = candidate.protocolo ? 'inline-block' : 'none';
+    }
+    setText('modalCandidateId', `ID: ${candidate.id} • Cadastrado em: ${formatDate(candidate.created_at)}`);
 
     // Dados pessoais
     setText('detNome', `${candidate.nome} ${candidate.sobrenome}`);
+    setText('detProtocolo', candidate.protocolo ? `#${candidate.protocolo}` : '—');
+    setText('detCreatedAt', formatDate(candidate.created_at));
     setText('detDOB', candidate.nascimento ? `${formatDateShort(candidate.nascimento)} (${calculateAge(candidate.nascimento)} ${t('ageYears')})` : '—');
     setText('detCit', candidate.cidadania || t('noneInformed'));
     setText('detNativeLang', candidate.lingua_materna || t('noneInformed'));
@@ -548,39 +572,48 @@ function openCandidate(id) {
 
     // Contato
     const emailEl = document.getElementById('detEmail');
-    if (emailEl) emailEl.innerHTML = candidate.email
-        ? `<a href="mailto:${escapeHtml(candidate.email)}" style="color:var(--accent);">${escapeHtml(candidate.email)}</a>`
-        : '✔';
+    if (emailEl) {
+        emailEl.innerHTML = candidate.email
+            ? `<a href="mailto:${escapeHtml(candidate.email)}" style="color:var(--accent);text-decoration:underline;">${escapeHtml(candidate.email)}</a>`
+            : '—';
+    }
     setText('detPhone', candidate.telefone || t('noneInformed'));
+
+    // WhatsApp link com mensagem tática contextualizada
+    const waBtn = document.getElementById('btnWhatsappCandidate');
+    if (waBtn) {
+        if (candidate.telefone) {
+            const phone = candidate.telefone.replace(/\D/g, '');
+            const msg = `Olá ${candidate.nome}, aqui é da equipe de recrutamento internacional referente à sua candidatura ${candidate.protocolo ? `protocolo #${candidate.protocolo}` : ''}.`;
+            waBtn.href = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+            waBtn.style.display = 'inline-flex';
+        } else {
+            waBtn.style.display = 'none';
+        }
+    }
 
     // Experiência militar
     setText('detMilitary', candidate.experiencia_militar || t('noneInformed'));
 
     // Status
     const statusSelect = document.getElementById('statusSelect');
-    statusSelect.value = candidate.status || 'novo';
-    document.getElementById('statusSavedMsg').classList.add('hidden');
+    if (statusSelect) {
+        statusSelect.value = candidate.status || 'novo';
+        document.getElementById('statusSavedMsg')?.classList.add('hidden');
+    }
 
     // Notas
     const notesEl = document.getElementById('adminNotes');
-    notesEl.value = candidate.admin_notes || '';
-    document.getElementById('notesSavedMsg').classList.add('hidden');
-
-    // WhatsApp link
-    const waBtn = document.getElementById('btnWhatsappCandidate');
-    if (candidate.telefone) {
-        const phone = candidate.telefone.replace(/\D/g, '');
-        waBtn.href = `https://wa.me/${phone}?text=${encodeURIComponent(`Olá ${candidate.nome}, seu processo de recrutamento...`)}`;
-        waBtn.style.display = '';
-    } else {
-        waBtn.style.display = 'none';
+    if (notesEl) {
+        notesEl.value = candidate.admin_notes || '';
+        document.getElementById('notesSavedMsg')?.classList.add('hidden');
     }
-
-    // Documentos
-    loadCandidateDocs(candidate.id);
 
     // Mostrar modal
     document.getElementById('candidateModal').classList.remove('hidden');
+
+    // Carregar Documentos (PDF / Imagens com previews e downloads diretos)
+    await loadCandidateDocs(candidate.id);
 }
 
 function closeModal() {
@@ -644,46 +677,147 @@ async function saveNotes() {
 }
 
 // =========================================================================
-// DOCUMENTOS — LISTAR, BAIXAR, DELETAR, UPLOAD
+// DOCUMENTOS — LISTAR, VISUALIZAR, BAIXAR, DELETAR, UPLOAD
 // =========================================================================
 async function loadCandidateDocs(candidateId) {
     const container = document.getElementById('docsContainer');
-    container.innerHTML = `<div class="docs-loading">${t('docsLoading')}</div>`;
+    if (!container) return;
+    container.innerHTML = `<div class="docs-loading">⏳ ${t('docsLoading')}</div>`;
 
-    const { data: files, error } = await supabaseClient.storage
-        .from(DOCS_BUCKET)
-        .list(`candidatos/${candidateId}`, { limit: 50, offset: 0 });
+    try {
+        const { data: files, error } = await supabaseClient.storage
+            .from(DOCS_BUCKET)
+            .list(`candidatos/${candidateId}`, { limit: 100, offset: 0, sortBy: { column: 'name', order: 'desc' } });
 
-    if (error || !files || files.length === 0) {
-        container.innerHTML = `<p class="no-docs-msg">${t('noDocs')}</p>`;
-        return;
-    }
+        if (error) {
+            console.error('Erro ao listar documentos:', error);
+            container.innerHTML = `<p class="no-docs-msg" style="color:var(--red);">⚠️ Erro ao carregar documentos: ${escapeHtml(error.message)}</p>`;
+            return;
+        }
 
-    container.innerHTML = files.map(file => `
-        <div class="doc-item" id="doc-${file.name}">
-            <span class="doc-name">📄 ${escapeHtml(file.name)}</span>
-            <div class="doc-actions">
-                <a class="btn-doc-dl" href="#" onclick="downloadDoc('${candidateId}', '${file.name}'); return false;">${t('btnDownload')}</a>
-                <button class="btn-doc-del" onclick="deleteDoc('${candidateId}', '${file.name}')">${t('btnDelete')}</button>
-            </div>
-        </div>
-    `).join('');
+        if (!files || files.length === 0) {
+            container.innerHTML = `<div class="no-docs-box">
+                <div style="font-size:1.6rem;margin-bottom:6px;">📭</div>
+                <p class="no-docs-msg">${t('noDocs')}</p>
+            </div>`;
+            return;
+        }
 
-    // Atualizar contagem no candidato
-    const idx = allCandidates.findIndex(c => c.id === candidateId);
-    if (idx !== -1) {
-        allCandidates[idx].has_docs = files.length > 0;
-        allCandidates[idx].doc_count = files.length;
+        // Criar URLs assinadas para cada arquivo (válidas por 2h)
+        const docPromises = files.map(async (file) => {
+            const cleanName = file.name.replace(/^\d+_/, '');
+            const isImage = /\.(png|jpe?g|webp|gif|bmp|svg)$/i.test(file.name);
+            const isPdf = /\.pdf$/i.test(file.name);
+            const sizeFormatted = formatFileSize(file.metadata?.size || file.metadata?.contentLength || 0);
+
+            const filePath = `candidatos/${candidateId}/${file.name}`;
+            const { data: signData } = await supabaseClient.storage
+                .from(DOCS_BUCKET)
+                .createSignedUrl(filePath, 7200);
+
+            const viewUrl = signData?.signedUrl || '#';
+            const downloadUrl = viewUrl !== '#'
+                ? viewUrl + (viewUrl.includes('?') ? '&' : '?') + 'download=' + encodeURIComponent(cleanName)
+                : '#';
+
+            return {
+                file,
+                cleanName,
+                isImage,
+                isPdf,
+                sizeFormatted,
+                viewUrl,
+                downloadUrl
+            };
+        });
+
+        const docItems = await Promise.all(docPromises);
+
+        container.innerHTML = docItems.map(item => {
+            const typeBadge = item.isPdf
+                ? `<span class="doc-badge-tag pdf-tag">📕 PDF</span>`
+                : item.isImage
+                ? `<span class="doc-badge-tag img-tag">🖼️ IMAGEM</span>`
+                : `<span class="doc-badge-tag other-tag">📄 ARQUIVO</span>`;
+
+            const previewHtml = item.isImage && item.viewUrl !== '#'
+                ? `<div class="doc-thumb-wrapper" onclick="window.open('${item.viewUrl}', '_blank')" title="Clique para ampliar imagem">
+                     <img src="${item.viewUrl}" alt="${escapeHtml(item.cleanName)}" class="doc-thumbnail" loading="lazy">
+                     <span class="thumb-zoom-hint">🔍 Expandir</span>
+                   </div>`
+                : item.isPdf && item.viewUrl !== '#'
+                ? `<div class="doc-pdf-icon-box" onclick="window.open('${item.viewUrl}', '_blank')" title="Clique para abrir PDF">
+                     <span style="font-size:2rem;">📕</span>
+                     <span style="font-size:0.65rem;font-weight:700;color:#ef4444;margin-top:2px;">VER PDF</span>
+                   </div>`
+                : `<div class="doc-generic-icon-box">
+                     <span style="font-size:2rem;">📄</span>
+                   </div>`;
+
+            return `
+                <div class="doc-card-rich" id="doc-${escapeHtml(item.file.name)}">
+                    ${previewHtml}
+                    <div class="doc-info-rich">
+                        <div class="doc-header-row">
+                            <span class="doc-title-rich" title="${escapeHtml(item.cleanName)}">${escapeHtml(item.cleanName)}</span>
+                            ${typeBadge}
+                        </div>
+                        <div class="doc-meta-rich">
+                            <span>📦 ${item.sizeFormatted}</span>
+                            ${item.file.created_at ? `<span>📅 ${formatDate(item.file.created_at)}</span>` : ''}
+                        </div>
+                        <div class="doc-actions-rich">
+                            <a href="${item.downloadUrl}" download="${escapeHtml(item.cleanName)}" class="btn-doc-action btn-download-primary" target="_blank" rel="noopener noreferrer">
+                                ⬇️ ${t('btnDownload')}
+                            </a>
+                            <a href="${item.viewUrl}" target="_blank" rel="noopener noreferrer" class="btn-doc-action btn-view-secondary">
+                                👁️ ${t('btnViewDoc')}
+                            </a>
+                            <button type="button" class="btn-doc-action btn-delete-danger" onclick="deleteDoc('${candidateId}', '${escapeHtml(item.file.name)}')">
+                                🗑️ ${t('btnDelete')}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+        // Atualizar contagem no candidato localmente
+        const idx = allCandidates.findIndex(c => c.id === candidateId);
+        if (idx !== -1) {
+            allCandidates[idx].has_docs = files.length > 0;
+            allCandidates[idx].doc_count = files.length;
+        }
+
+    } catch (err) {
+        console.error('Erro ao carregar documentos:', err);
+        container.innerHTML = `<p class="no-docs-msg" style="color:var(--red);">Erro: ${escapeHtml(err.message)}</p>`;
     }
 }
 
-async function downloadDoc(candidateId, fileName) {
+async function downloadDoc(candidateId, fileName, originalName) {
+    const cleanName = originalName || fileName.replace(/^\d+_/, '');
     const { data, error } = await supabaseClient.storage
         .from(DOCS_BUCKET)
-        .createSignedUrl(`candidatos/${candidateId}/${fileName}`, 60);
+        .createSignedUrl(`candidatos/${candidateId}/${fileName}`, 3600);
 
-    if (error || !data) { alert('Erro ao gerar link de download.'); return; }
-    window.open(data.signedUrl, '_blank');
+    if (error || !data || !data.signedUrl) {
+        alert('Erro ao gerar link de download.');
+        return;
+    }
+
+    let downloadUrl = data.signedUrl;
+    if (!downloadUrl.includes('download=')) {
+        downloadUrl += (downloadUrl.includes('?') ? '&' : '?') + 'download=' + encodeURIComponent(cleanName);
+    }
+
+    const a = document.createElement('a');
+    a.href = downloadUrl;
+    a.download = cleanName;
+    a.target = '_blank';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => a.remove(), 1000);
 }
 
 async function deleteDoc(candidateId, fileName) {
@@ -693,13 +827,10 @@ async function deleteDoc(candidateId, fileName) {
         .from(DOCS_BUCKET)
         .remove([`candidatos/${candidateId}/${fileName}`]);
 
-    if (error) { alert('Erro ao excluir documento.'); return; }
-    document.getElementById(`doc-${fileName}`)?.remove();
+    if (error) { alert('Erro ao excluir documento: ' + error.message); return; }
 
-    const container = document.getElementById('docsContainer');
-    if (container.children.length === 0) {
-        container.innerHTML = `<p class="no-docs-msg">${t('noDocs')}</p>`;
-    }
+    // Recarregar a lista de docs
+    await loadCandidateDocs(candidateId);
 }
 
 async function uploadDocs(event) {
@@ -708,7 +839,8 @@ async function uploadDocs(event) {
     if (!files || files.length === 0) return;
 
     for (const file of files) {
-        const path = `candidatos/${currentCandidate.id}/${Date.now()}_${file.name}`;
+        const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, '_');
+        const path = `candidatos/${currentCandidate.id}/${Date.now()}_${safeName}`;
         const { error } = await supabaseClient.storage
             .from(DOCS_BUCKET)
             .upload(path, file, { cacheControl: '3600', upsert: false });
@@ -721,11 +853,11 @@ async function uploadDocs(event) {
     // Atualizar flag no registro
     await supabaseClient
         .from('candidaturas')
-        .update({ has_docs: true })
+        .update({ has_docs: true, updated_at: new Date().toISOString() })
         .eq('id', currentCandidate.id);
 
     // Recarregar lista de docs
-    loadCandidateDocs(currentCandidate.id);
+    await loadCandidateDocs(currentCandidate.id);
     event.target.value = '';
 }
 

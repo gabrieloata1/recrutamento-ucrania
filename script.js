@@ -223,9 +223,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
             }
             const protocolo = 'REC-' + new Date().getFullYear() + '-' + String(Math.floor(Date.now() / 1000) % 100000).padStart(5, '0');
-            const { data: inserted, error } = await supabaseClient
+            const candidateId = typeof crypto !== 'undefined' && crypto.randomUUID 
+                ? crypto.randomUUID() 
+                : ('xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => { const r = Math.random() * 16 | 0; return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16); }));
+
+            const { error } = await supabaseClient
                 .from('candidaturas')
                 .insert([{
+                    id: candidateId,
                     nome: data.nome,
                     sobrenome: data.sobrenome,
                     nascimento: data.nascimento,
@@ -237,13 +242,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     chegada_ucrania: data.chegadaUcrania || null,
                     experiencia_militar: data.experienciaMilitar || null,
                     status: 'novo',
-                    protocolo: protocolo
-                }])
-                .select('id')
-                .single();
+                    protocolo: protocolo,
+                    has_docs: selectedFiles.length > 0,
+                    doc_count: selectedFiles.length
+                }]);
 
             if (error) throw error;
-            return { success: true, protocolo: protocolo, id: inserted?.id };
+            return { success: true, protocolo: protocolo, id: candidateId };
         } catch (err) {
             console.error('Erro ao salvar candidatura:', err);
             return { success: false, error: err.message };
