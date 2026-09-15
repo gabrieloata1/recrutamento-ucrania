@@ -32,13 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const experienciaInput = document.getElementById('experienciaMilitar');
     const chegadaInput = document.getElementById('chegadaUcrania');
 
-    // Elementos do Modal
+    // Elementos do Modal de Sucesso
     const modal = document.getElementById('confirmModal');
     const modalFilesSummary = document.getElementById('modalFilesSummary');
-    const btnRedirectWa = document.getElementById('btnRedirectWa');
-    const btnRedirectTg = document.getElementById('btnRedirectTg');
-    const btnCopyTgPhone = document.getElementById('btnCopyTgPhone');
-    const btnCopyText = document.getElementById('btnCopyText');
+    const modalProtocolCode = document.getElementById('modalProtocolCode');
     const btnCloseModal = document.getElementById('btnCloseModal');
 
     // Elementos de Upload de Documento
@@ -429,7 +426,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const btnSubmitSpan = btnSubmit.querySelector('[data-i18n="btn_submit"]') || btnSubmit;
         const originalText = btnSubmitSpan.textContent;
         btnSubmit.disabled = true;
-        btnSubmitSpan.textContent = '⏳ Salvando candidatura...';
+        btnSubmitSpan.textContent = '⏳ Enviando ao painel...';
 
         const formData = {
             nome: nomeInput.value.trim(),
@@ -480,8 +477,13 @@ document.addEventListener('DOMContentLoaded', () => {
         btnSubmit.disabled = false;
         btnSubmitSpan.textContent = originalText;
 
+        if (!saveResult.success) {
+            alert('Não foi possível registrar a candidatura no painel. Verifique sua conexão e tente novamente.');
+            return;
+        }
+
         // =====================================================================
-        // COMPILAÇÃO DA MENSAGEM OFICIAL DO WHATSAPP
+        // EXIBIÇÃO DA CONFIRMAÇÃO DE ENVIO AO PAINEL
         // =====================================================================
         const age = calculateAge(nascimentoInput.value);
         const selectedCidadaniaText = cidadaniaInput.options[cidadaniaInput.selectedIndex]
@@ -491,107 +493,63 @@ document.addEventListener('DOMContentLoaded', () => {
             ? linguaMaternaInput.options[linguaMaternaInput.selectedIndex].text
             : linguaMaternaInput.value;
 
-        const protocoloLine = saveResult.success && saveResult.protocolo
-            ? `• *Protocolo:* ${saveResult.protocolo}\n`
-            : '';
+        // Atualizar código de protocolo no modal
+        if (modalProtocolCode) {
+            modalProtocolCode.textContent = saveResult.protocolo || '#REC-2026';
+        }
 
-        const msgLines = [
-            t.wa_header,
-            '----------------------------------------',
-            protocoloLine,
-            t.wa_sec_personal,
-            `• *${t.wa_first_name}:* ${nomeInput.value.trim()}`,
-            `• *${t.wa_last_name}:* ${sobrenomeInput.value.trim()}`,
-            `• *${t.wa_dob}:* ${formatDateBR(nascimentoInput.value)} (${age} ${t.wa_years})`,
-            `• *${t.wa_citizenship}:* ${selectedCidadaniaText}`,
-            `• *${t.wa_native_lang}:* ${selectedLinguaText}`,
-            `• *${t.wa_other_lang}:* ${outraLinguaInput.value.trim() || t.wa_none_informed}`,
-            '',
-            t.wa_sec_docs,
-            t.wa_doc_item,
-            '',
-            t.wa_sec_contact,
-            `• *${t.wa_email}:* ${emailInput.value.trim()}`,
-            `• *${t.wa_messenger}:* +${cleanPhone}`,
-            `• *${t.wa_military}:* ${experienciaInput.value.trim() || t.wa_military_none}`,
-            `• *${t.wa_arrival}:* ${chegadaInput.value.trim() || t.wa_arrival_default}`,
-            '----------------------------------------',
-            t.wa_source
-        ].filter(l => l !== undefined);
+        // Atualizar resumo dos dados enviados
+        if (modalFilesSummary) {
+            modalFilesSummary.innerHTML = `
+                <div style="display:flex; justify-content:space-between; margin-bottom:8px; padding-bottom:6px; border-bottom:1px solid rgba(255,255,255,0.06);">
+                    <span style="color:#94a3b8;">${t.modal_summary_candidate || 'Candidato'}:</span>
+                    <strong>${escapeHtml(nomeInput.value.trim())} ${escapeHtml(sobrenomeInput.value.trim())} (${age} ${t.wa_years || 'anos'})</strong>
+                </div>
+                <div style="display:flex; justify-content:space-between; margin-bottom:8px; padding-bottom:6px; border-bottom:1px solid rgba(255,255,255,0.06);">
+                    <span style="color:#94a3b8;">${t.modal_summary_cit_lang || 'Cidadania / Idioma'}:</span>
+                    <span>${escapeHtml(selectedCidadaniaText)} / ${escapeHtml(selectedLinguaText)}</span>
+                </div>
+                <div style="display:flex; justify-content:space-between; margin-bottom:8px; padding-bottom:6px; border-bottom:1px solid rgba(255,255,255,0.06);">
+                    <span style="color:#94a3b8;">${t.modal_summary_phone || 'Telefone / Contato'}:</span>
+                    <span>+${cleanPhone}</span>
+                </div>
+                <div style="display:flex; justify-content:space-between;">
+                    <span style="color:#94a3b8;">${t.modal_summary_docs || 'Documentos'}:</span>
+                    <strong style="color:${uploadedCount > 0 ? '#22c55e' : '#e5a93b'}">
+                        ${uploadedCount > 0 ? `✅ ${uploadedCount} arquivo(s) enviado(s)` : 'Nenhum arquivo anexado'}
+                    </strong>
+                </div>
+            `;
+        }
 
-        generatedMessageText = msgLines.join('\n');
-        const encodedMsg = encodeURIComponent(generatedMessageText);
-        generatedWaUrl = `https://api.whatsapp.com/send?phone=${RECRUITER_CONFIG.whatsappNumber}&text=${encodedMsg}`;
-        generatedTgUrl = RECRUITER_CONFIG.getTelegramUrl(generatedMessageText);
+        // Limpar o formulário para evitar envios duplicados
+        form.reset();
+        selectedFiles = [];
+        if (uploadFileList) uploadFileList.innerHTML = '';
+        if (uploadStatusMsg) {
+            uploadStatusMsg.textContent = '';
+            uploadStatusMsg.className = 'upload-status-msg';
+        }
 
-        // Atualizar resumo do modal
-        const protocoloDisplay = saveResult.success && saveResult.protocolo
-            ? `<div style="margin-top:8px;padding:8px 12px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);border-radius:6px;font-size:0.85rem;color:#22c55e;">
-                ✅ Candidatura salva com protocolo: <strong>${saveResult.protocolo}</strong>
-               </div>`
-            : '';
-
-        modalFilesSummary.innerHTML = `
-            <div><strong>${t.modal_summary_candidate}:</strong> ${escapeHtml(nomeInput.value.trim())} ${escapeHtml(sobrenomeInput.value.trim())} (${age} ${t.wa_years})</div>
-            <div><strong>${t.modal_summary_cit_lang}:</strong> ${escapeHtml(selectedCidadaniaText)} / ${escapeHtml(selectedLinguaText)}</div>
-            <div><strong>${t.modal_summary_passport}:</strong> ${t.modal_summary_passport_text}</div>
-            <div><strong>${t.modal_summary_phone}:</strong> +${cleanPhone}</div>
-            ${protocoloDisplay}
-        `;
-
-        // Exibir modal
-        modal.classList.add('active');
-    });
-
-    // Ação do botão do WhatsApp no Modal
-    btnRedirectWa.addEventListener('click', () => {
-        window.open(generatedWaUrl, '_blank', 'noopener,noreferrer');
-    });
-
-    // Ação do botão do Telegram no Modal
-    if (btnRedirectTg) {
-        btnRedirectTg.addEventListener('click', () => {
-            window.open(generatedTgUrl, '_blank', 'noopener,noreferrer');
-        });
-    }
-
-    // Copiar Número do Telegram
-    if (btnCopyTgPhone) {
-        btnCopyTgPhone.addEventListener('click', () => {
-            const t = translations[currentLang] || translations.pt;
-            navigator.clipboard.writeText(RECRUITER_CONFIG.telegramPhone).then(() => {
-                btnCopyTgPhone.textContent = t.modal_btn_copy_tg_success || '✓ Número do Telegram Copiado!';
-                setTimeout(() => {
-                    btnCopyTgPhone.textContent = t.modal_btn_copy_tg || '📋 Copiar Número do Telegram (+48 796 977 298)';
-                }, 2500);
-            }).catch(() => {
-                prompt('Número oficial do Telegram:', RECRUITER_CONFIG.telegramPhone);
-            });
-        });
-    }
-
-    // Copiar Texto para a Área de Transferência
-    btnCopyText.addEventListener('click', () => {
-        const t = translations[currentLang] || translations.pt;
-        navigator.clipboard.writeText(generatedMessageText).then(() => {
-            btnCopyText.textContent = t.modal_btn_copy_success;
-            setTimeout(() => {
-                btnCopyText.textContent = t.modal_btn_copy;
-            }, 2500);
-        }).catch(() => {
-            alert('Não foi possível copiar automaticamente. Você pode abrir o WhatsApp diretamente.');
-        });
+        // Exibir modal de confirmação de envio ao painel
+        if (modal) {
+            modal.classList.add('active');
+        }
     });
 
     // Fechar Modal
-    btnCloseModal.addEventListener('click', () => {
-        modal.classList.remove('active');
-    });
+    if (btnCloseModal) {
+        btnCloseModal.addEventListener('click', () => {
+            if (modal) modal.classList.remove('active');
+        });
+    }
 
     // Fechar ao clicar fora da caixa do modal
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('active');
-        }
-    });
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+    }
 });

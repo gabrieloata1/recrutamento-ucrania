@@ -6,7 +6,7 @@
     <title>Recrutamento Oficial | Ucrânia & África do Sul</title>
     <meta name="description" content="Recrutamento oficial para Ucrânia e África do Sul. Voo, visto, hospedagem, fardamento e salário de $1.000 a $8.000 USD inclusos.">
     <link rel="icon" type="image/svg+xml" href="logo.svg">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=3">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -368,10 +368,10 @@
                     <!-- BOTÃO DE ENVIO -->
                     <div class="form-submit-wrapper">
                         <button type="submit" id="btnSubmit" class="btn btn-submit">
-                            <span class="btn-icon">📲</span> <span data-i18n="btn_submit">Enviar Ficha de Recrutamento</span>
+                            <span class="btn-icon">📋</span> <span data-i18n="btn_submit">Enviar Ficha de Recrutamento</span>
                         </button>
                         <p class="submit-disclaimer" data-i18n="submit_disclaimer">
-                            Ao clicar em enviar, seus dados e documentos serão registrados com segurança e a equipe de recrutamento entrará em contato.
+                            Ao clicar em enviar, seus dados e documentos serão registrados com segurança e enviados diretamente ao painel da equipe de recrutamento.
                         </p>
                     </div>
                 </div>
@@ -379,39 +379,28 @@
         </div>
     </section>
 
-    <!-- MODAL DE CONFIRMAÇÃO / REDIRECIONAMENTO -->
+    <!-- MODAL DE CONFIRMAÇÃO / SUCESSO DE ENVIO AO PAINEL -->
     <div id="confirmModal" class="modal-overlay">
-        <div class="modal-box">
+        <div class="modal-box modal-box-success">
             <div class="modal-header">
                 <span class="modal-icon">✅</span>
-                <h3 data-i18n="modal_title">Ficha Pronta para Envio!</h3>
+                <h3 data-i18n="modal_title">Candidatura Enviada ao Painel!</h3>
             </div>
             <div class="modal-body">
-                <p data-i18n="modal_desc">Sua ficha de recrutamento foi conferida e estruturada com sucesso.</p>
-                <div class="modal-alert" data-i18n="modal_alert">
-                    <strong>📌 AVISO OBRIGATÓRIO (PASSAPORTE):</strong><br>
-                    Você será redirecionado para o WhatsApp do Recrutador (<code>+380 96 950 1051</code>). Como imagens não são transferidas pelo redirecionador, <strong>envie a foto ou PDF do seu passaporte internacional diretamente no chat do WhatsApp ou Telegram</strong> assim que a conversa for aberta!
+                <p data-i18n="modal_desc">Sua ficha de recrutamento e seus documentos foram enviados com sucesso diretamente para a equipe administrativa.</p>
+                <div class="modal-protocol-box" id="modalProtocolBox">
+                    <span class="protocol-label" data-i18n="modal_protocol_label">PROTOCOLO OFICIAL</span>
+                    <strong class="protocol-code" id="modalProtocolCode">#REC-2026-XXXXX</strong>
+                    <span class="protocol-hint" data-i18n="modal_protocol_hint">Guarde este número de protocolo para acompanhamento</span>
                 </div>
                 <div class="modal-files-summary" id="modalFilesSummary"></div>
+                <p class="modal-next-steps" data-i18n="modal_next_steps">
+                    Nossa equipe de recrutadores analisará seu perfil diretamente no painel e entrará em contato pelos canais informados.
+                </p>
             </div>
             <div class="modal-actions">
-                <button type="button" id="btnRedirectWa" class="btn btn-primary btn-block" data-i18n="modal_btn_wa">
-                    Abrir WhatsApp do Recrutador Agora
-                </button>
-                <button type="button" id="btnRedirectTg" class="btn btn-telegram btn-block" data-i18n="modal_btn_tg">
-                    Abrir Telegram do Recrutador (+48 796 977 298)
-                </button>
-                <button type="button" id="btnCopyTgPhone" class="btn btn-outline-tg btn-block" data-i18n="modal_btn_copy_tg">
-                    📋 Copiar Número do Telegram (+48 796 977 298)
-                </button>
-                <div class="modal-tg-hint" data-i18n="modal_tg_hint">
-                    💡 <em>Aviso:</em> Se o aplicativo do Telegram indicar que o número não foi encontrado, adicione <strong>+48 796 977 298</strong> aos contatos do seu telefone ou chame pelo WhatsApp oficial.
-                </div>
-                <button type="button" id="btnCopyText" class="btn btn-outline btn-block" data-i18n="modal_btn_copy">
-                    Copiar Dados da Ficha
-                </button>
-                <button type="button" id="btnCloseModal" class="btn btn-secondary btn-block" data-i18n="modal_btn_close">
-                    Voltar e Editar
+                <button type="button" id="btnCloseModal" class="btn btn-primary btn-block" data-i18n="modal_btn_close">
+                    Concluir
                 </button>
             </div>
         </div>
@@ -435,8 +424,8 @@
         </div>
     </footer>
 
-    <script src="translations.js"></script>
+    <script src="translations.js?v=3"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js?v=3"></script>
 </body>
 </html>
