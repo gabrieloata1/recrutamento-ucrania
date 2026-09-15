@@ -92,6 +92,10 @@ const ADMIN_TRANSLATIONS = {
         uploadError: 'Erro ao anexar documento.',
         btnClose: 'Fechar',
         confirmDelete: 'Deseja realmente excluir este documento?',
+        btnDeleteCandidate: 'Excluir',
+        btnDeleteCandidateModal: 'Excluir Candidato',
+        confirmDeleteCandidate: 'Deseja realmente excluir o candidato "{name}"? Esta ação não pode ser desfeita e todos os documentos vinculados serão removidos.',
+        candidateDeleteError: 'Erro ao excluir candidato: ',
         ageYears: 'anos',
         noneInformed: 'Não informado',
         exportFilename: 'candidatos_recrutamento',
@@ -166,6 +170,10 @@ const ADMIN_TRANSLATIONS = {
         uploadError: 'Error al adjuntar el documento.',
         btnClose: 'Cerrar',
         confirmDelete: '¿Desea eliminar este documento?',
+        btnDeleteCandidate: 'Eliminar',
+        btnDeleteCandidateModal: 'Eliminar Candidato',
+        confirmDeleteCandidate: '¿Desea realmente eliminar al candidato "{name}"? Esta acción no se puede deshacer y todos los documentos vinculados serán eliminados.',
+        candidateDeleteError: 'Error al eliminar candidato: ',
         ageYears: 'años',
         noneInformed: 'No informado',
         exportFilename: 'candidatos_reclutamiento',
@@ -296,6 +304,7 @@ function applyTranslations() {
     setText('detLabelPhone', t('detLabelPhone'));
     setAttr('adminNotes', 'placeholder', t('notesPlaceholder'));
     setText('btnClose', t('btnClose'));
+    setText('btnDeleteModalText', t('btnDeleteCandidateModal'));
     setText('uploadText', t('uploadText'));
 
     // Select de status no modal
@@ -504,7 +513,7 @@ function renderTable(candidates) {
             ? `<span class="docs-badge has-docs" title="${c.doc_count || 1} doc(s)">📁 ${c.doc_count || 1}</span>`
             : `<span class="docs-badge no-docs">—</span>`;
 
-        return `<tr class="candidate-row" onclick="openCandidate('${c.id}')" title="Clique para ver a ficha completa de ${escapeHtml(c.nome)}">
+        return `<tr class="candidate-row" data-candidate-id="${c.id}" onclick="openCandidate('${c.id}')" title="Clique para ver a ficha completa de ${escapeHtml(c.nome)}">
             <td style="color:var(--text-muted);font-size:0.78rem;">#${String(idx + 1).padStart(3, '0')}</td>
             <td>
                 <div style="font-weight:600;color:var(--text-primary);">${escapeHtml(c.nome)} ${escapeHtml(c.sobrenome)}</div>
@@ -521,7 +530,10 @@ function renderTable(candidates) {
             <td><span class="${statusClass(status)}">${statusLabel(status)}</span></td>
             <td>${docsHtml}</td>
             <td>
-                <button class="btn-view" onclick="event.stopPropagation(); openCandidate('${c.id}')">${t('btnView')}</button>
+                <div class="table-actions-cell">
+                    <button type="button" class="btn-view" onclick="event.stopPropagation(); openCandidate('${c.id}')" title="${t('btnView')}">${t('btnView')}</button>
+                    <button type="button" class="btn-delete-candidate" onclick="event.stopPropagation(); deleteCandidate('${c.id}')" title="${t('btnDeleteCandidate')}">🗑️ ${t('btnDeleteCandidate')}</button>
+                </div>
             </td>
         </tr>`;
     }).join('');
@@ -886,4 +898,72 @@ function exportCSV() {
     a.download = `${t('exportFilename')}_${new Date().toISOString().split('T')[0]}.csv`;
     a.click();
     URL.revokeObjectURL(url);
+}
+
+// =========================================================================
+// EXCLUIR CANDIDATO
+// =========================================================================
+async function deleteCandidate(candidateId) {
+    const candidate = allCandidates.find(c => c.id === candidateId);
+    if (!candidate) return;
+
+    const candidateName = `${candidate.nome || ''} ${candidate.sobrenome || ''}`.trim() || 'este candidato';
+    const proto = candidate.protocolo ? ` (#${candidate.protocolo})` : '';
+    const confirmMsg = t('confirmDeleteCandidate').replace('{name}', `${candidateName}${proto}`);
+    if (!confirm(confirmMsg)) return;
+
+    // Feedback visual imediato na linha da tabela
+    const rowEl = document.querySelector(`tr[data-candidate-id="${candidateId}"]`);
+    if (rowEl) {
+        rowEl.style.opacity = '0.4';
+        rowEl.style.pointerEvents = 'none';
+    }
+
+    try {
+        // 1. Remover arquivos do Storage associados ao candidato (se houver)
+        try {
+            const { data: files } = await supabaseClient.storage
+                .from(DOCS_BUCKET)
+                .list(`candidatos/${candidateId}`);
+            if (files && files.length > 0) {
+                const pathsToDelete = files.map(f => `candidatos/${candidateId}/${f.name}`);
+                await supabaseClient.storage
+                    .from(DOCS_BUCKET)
+                    .remove(pathsToDelete);
+            }
+        } catch (storageErr) {
+            console.warn('Aviso ao remover arquivos do storage:', storageErr);
+        }
+
+        // 2. Excluir o registro da tabela candidaturas
+        const { error } = await supabaseClient
+            .from('candidaturas')
+            .delete()
+            .eq('id', candidateId);
+
+        if (error) throw error;
+
+        // 3. Se o modal aberto pertencer a este candidato, fechá-lo
+        if (currentCandidate && currentCandidate.id === candidateId) {
+            closeModal();
+        }
+
+        // 4. Atualizar lista e interface
+        allCandidates = allCandidates.filter(c => c.id !== candidateId);
+        filterCandidates();
+        updateStats(allCandidates);
+
+    } catch (err) {
+        console.error('Erro ao excluir candidato:', err);
+        alert(`${t('candidateDeleteError')}${err.message || err}`);
+        if (rowEl) {
+            rowEl.style.opacity = '1';
+            rowEl.style.pointerEvents = 'auto';
+        }
+    }
+}
+
+function deleteCurrentCandidate() {
+    if (!currentCandidate) return;
+    deleteCandidate(currentCandidate.id);
 }

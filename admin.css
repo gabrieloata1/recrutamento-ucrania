@@ -466,7 +466,14 @@ html, body {
 .tstatus-aprovado { background: rgba(34,197,94,0.12); color: var(--green); border: 1px solid rgba(34,197,94,0.3); }
 .tstatus-rejeitado { background: rgba(239,68,68,0.12); color: var(--red); border: 1px solid rgba(239,68,68,0.3); }
 
-/* ACTION BUTTOINS IN TABLE */
+/* ACTION BUTTONS IN TABLE */
+.table-actions-cell {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
 .btn-view {
     background: var(--accent-glow);
     border: 1px solid rgba(245,245,24,0.3);
@@ -480,6 +487,31 @@ html, body {
     font-family: var(--font-body);
 }
 .btn-view:hover { background: rgba(245,245,24,0.25); }
+
+.btn-delete-candidate {
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.35);
+    color: #ef4444;
+    padding: 5px 10px;
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: var(--font-body);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+.btn-delete-candidate:hover {
+    background: rgba(239, 68, 68, 0.25);
+    border-color: #ef4444;
+    color: #ff6b6b;
+    transform: translateY(-1px);
+}
+.btn-delete-candidate:active {
+    transform: translateY(0);
+}
 
 .docs-badge {
     display: inline-flex;
@@ -871,12 +903,18 @@ html, body {
 /* MODAL FOOTER */
 .modal-admin-footer {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
     gap: 10px;
     padding: 16px 28px;
     border-top: 1px solid var(--border);
     background: var(--bg-card);
     flex-shrink: 0;
+}
+
+.btn-delete-modal {
+    padding: 8px 16px;
+    font-size: 0.85rem;
 }
 
 /* ======================== RESPONSIVE ======================== */

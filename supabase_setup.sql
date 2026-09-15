@@ -68,6 +68,14 @@ CREATE POLICY "Atualização somente para admin autenticado"
     USING (true)
     WITH CHECK (true);
 
+-- Política: somente usuários autenticados podem EXCLUIR candidaturas
+DROP POLICY IF EXISTS "Exclusão somente para admin autenticado" ON public.candidaturas;
+CREATE POLICY "Exclusão somente para admin autenticado"
+    ON public.candidaturas
+    FOR DELETE
+    TO authenticated
+    USING (true);
+
 -- Política: anon pode atualizar campos de documentos (has_docs, doc_count) após upload
 DROP POLICY IF EXISTS "Atualização de docs por anon" ON public.candidaturas;
 CREATE POLICY "Atualização de docs por anon"
