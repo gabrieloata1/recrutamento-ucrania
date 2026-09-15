@@ -6,7 +6,7 @@
     <title>Recrutamento Oficial | Ucrânia & África do Sul</title>
     <meta name="description" content="Recrutamento oficial para Ucrânia e África do Sul. Voo, visto, hospedagem, fardamento e salário de $1.000 a $8.000 USD inclusos.">
     <link rel="icon" type="image/svg+xml" href="logo.svg">
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -370,6 +370,15 @@
                         <button type="submit" id="btnSubmit" class="btn btn-submit">
                             <span class="btn-icon">📋</span> <span data-i18n="btn_submit">Enviar Ficha de Recrutamento</span>
                         </button>
+                        <!-- SEGUNDO BOTÃO: NOTIFICAÇÃO DIRETA AO WHATSAPP DO RECRUTADOR -->
+                        <a href="https://wa.me/380969501051?text=Ol%C3%A1%2C%20j%C3%A1%20preenchi%20a%20ficha%20de%20recrutamento" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           id="btnWhatsappDirect" 
+                           class="btn btn-whatsapp-direct" 
+                           style="display: none;">
+                            <span class="btn-icon">💬</span> <span data-i18n="btn_whatsapp_notify">Avisar no WhatsApp: "Olá, já preenchi a ficha de recrutamento"</span>
+                        </a>
                         <p class="submit-disclaimer" data-i18n="submit_disclaimer">
                             Ao clicar em enviar, seus dados e documentos serão registrados com segurança e enviados diretamente ao painel da equipe de recrutamento.
                         </p>
@@ -399,7 +408,15 @@
                 </p>
             </div>
             <div class="modal-actions">
-                <button type="button" id="btnCloseModal" class="btn btn-primary btn-block" data-i18n="modal_btn_close">
+                <a href="https://wa.me/380969501051?text=Ol%C3%A1%2C%20j%C3%A1%20preenchi%20a%20ficha%20de%20recrutamento" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   id="modalBtnWhatsapp" 
+                   class="btn btn-whatsapp-direct btn-block" 
+                   style="margin-bottom: 12px;">
+                    <span class="btn-icon">💬</span> <span data-i18n="modal_btn_whatsapp">Avisar no WhatsApp: "Olá, já preenchi a ficha de recrutamento"</span>
+                </a>
+                <button type="button" id="btnCloseModal" class="btn btn-secondary btn-block" data-i18n="modal_btn_close">
                     Concluir
                 </button>
             </div>
@@ -424,8 +441,8 @@
         </div>
     </footer>
 
-    <script src="translations.js?v=3"></script>
+    <script src="translations.js?v=4"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
-    <script src="script.js?v=3"></script>
+    <script src="script.js?v=4"></script>
 </body>
 </html>

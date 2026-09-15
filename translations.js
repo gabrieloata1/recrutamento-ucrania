@@ -109,6 +109,9 @@ const TRANSLATIONS = {
         upload_hint_text: "Máx. 10 MB por arquivo",
 
         btn_submit: "Enviar Ficha para o Painel",
+        btn_whatsapp_notify: "Avisar no WhatsApp: \"Olá, já preenchi a ficha de recrutamento\"",
+        btn_whatsapp_msg: "Olá, já preenchi a ficha de recrutamento",
+        modal_btn_whatsapp: "Avisar no WhatsApp: \"Olá, já preenchi a ficha de recrutamento\"",
         submit_disclaimer: "Ao clicar em enviar, seus dados e documentos serão registrados com segurança e enviados diretamente ao painel da equipe de recrutamento.",
 
         modal_title: "Candidatura Enviada ao Painel!",
@@ -274,6 +277,9 @@ const TRANSLATIONS = {
         upload_hint_text: "Max 10 MB per file",
 
         btn_submit: "Submit Application to Panel",
+        btn_whatsapp_notify: "Notify on WhatsApp: \"Hello, I have already filled out the recruitment form\"",
+        btn_whatsapp_msg: "Hello, I have already filled out the recruitment form",
+        modal_btn_whatsapp: "Notify on WhatsApp: \"Hello, I have already filled out the recruitment form\"",
         submit_disclaimer: "Upon clicking submit, your data and documents will be securely registered and sent directly to the recruitment team's panel.",
 
         modal_title: "Application Sent to Panel!",
@@ -439,6 +445,9 @@ const TRANSLATIONS = {
         upload_hint_text: "Máx. 10 MB por archivo",
 
         btn_submit: "Enviar Candidatura al Panel",
+        btn_whatsapp_notify: "Avisar por WhatsApp: \"Hola, ya completé el formulario de reclutamiento\"",
+        btn_whatsapp_msg: "Hola, ya completé el formulario de reclutamiento",
+        modal_btn_whatsapp: "Avisar por WhatsApp: \"Hola, ya completé el formulario de reclutamiento\"",
         submit_disclaimer: "Al hacer clic en enviar, sus datos y documentos serán registrados de forma segura y enviados directamente al panel del equipo de reclutamiento.",
 
         modal_title: "¡Candidatura Enviada al Panel!",
@@ -604,6 +613,9 @@ const TRANSLATIONS = {
         upload_hint_text: "Макс. 10 МБ на файл",
 
         btn_submit: "Надіслати Анкету до Панелі",
+        btn_whatsapp_notify: "Повідомити у WhatsApp: \"Вітаю, я вже заповнив анкету рекрутингу\"",
+        btn_whatsapp_msg: "Вітаю, я вже заповнив анкету рекрутингу",
+        modal_btn_whatsapp: "Повідомити у WhatsApp: \"Вітаю, я вже заповнив анкету рекрутингу\"",
         submit_disclaimer: "Після натискання ваші дані та документи будуть надійно зареєстровані та надіслані безпосередньо до адміністративної панелі рекрутингової команди.",
 
         modal_title: "Анкету Надіслано до Панелі!",

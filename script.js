@@ -32,11 +32,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const experienciaInput = document.getElementById('experienciaMilitar');
     const chegadaInput = document.getElementById('chegadaUcrania');
 
-    // Elementos do Modal de Sucesso
+    // Elementos do Modal de Sucesso e Envio
     const modal = document.getElementById('confirmModal');
     const modalFilesSummary = document.getElementById('modalFilesSummary');
     const modalProtocolCode = document.getElementById('modalProtocolCode');
     const btnCloseModal = document.getElementById('btnCloseModal');
+    const btnSubmit = document.getElementById('btnSubmit');
+    const btnWhatsappDirect = document.getElementById('btnWhatsappDirect');
+    const modalBtnWhatsapp = document.getElementById('modalBtnWhatsapp');
+
+    function showWhatsappDirectButton() {
+        if (btnWhatsappDirect) {
+            btnWhatsappDirect.style.display = 'inline-flex';
+            btnWhatsappDirect.classList.add('pulse-attention');
+        }
+    }
 
     // Elementos de Upload de Documento
     const docUploadPublic = document.getElementById('docUploadPublic');
@@ -189,6 +199,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const heroWaBtn = document.getElementById('heroWaBtn');
         if (heroWaBtn && t.hero_wa_msg) {
             heroWaBtn.href = `https://wa.me/380969501051?text=${encodeURIComponent(t.hero_wa_msg)}`;
+        }
+
+        // Atualizar links do botão secundário de WhatsApp (envio concluído)
+        const waMsg = t.btn_whatsapp_msg || 'Olá, já preenchi a ficha de recrutamento';
+        const waDirectUrl = `https://wa.me/${RECRUITER_CONFIG.whatsappNumber}?text=${encodeURIComponent(waMsg)}`;
+        if (btnWhatsappDirect) {
+            btnWhatsappDirect.href = waDirectUrl;
+        }
+        if (modalBtnWhatsapp) {
+            modalBtnWhatsapp.href = waDirectUrl;
         }
     }
 
@@ -419,6 +439,9 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        // Revelar o botão secundário de notificação ao WhatsApp do recrutador
+        showWhatsappDirectButton();
+
         // =====================================================================
         // SALVAR NO SUPABASE
         // =====================================================================
@@ -550,6 +573,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.target === modal) {
                 modal.classList.remove('active');
             }
+        });
+    }
+
+    // Ouvinte direto no clique do botão de envio para prontidão do WhatsApp
+    if (btnSubmit) {
+        btnSubmit.addEventListener('click', () => {
+            showWhatsappDirectButton();
         });
     }
 });
